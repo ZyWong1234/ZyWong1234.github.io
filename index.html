@@ -39,6 +39,7 @@
   <nav class="navbar" id="navbar">
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
+    <a href="#resume">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#portfolio">Projects</a>
     <a href="#contact">Contact</a>
@@ -54,13 +55,9 @@
     <p>A final-year computing student who builds full-stack web apps, desktop
       systems and networks — and enjoys breaking them to learn how to secure them.</p>
     <div class="social-media">
-      <!-- TODO: replace the "#" with your real profile URLs -->
-      <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-      <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-      <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+      <a href="https://github.com/ZyWong1234" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+      <a href="https://www.linkedin.com/in/wong-zhi-yoong-baa4842b1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
     </div>
-    <!-- TODO: point this at your actual CV file, e.g. /cv.pdf in public/ -->
-    <a href="#" class="btn">Download CV</a>
   </div>
 
   <div class="home-img">
@@ -88,7 +85,92 @@
       brute-force testing in Kali Linux. I like understanding not just how to
       build a system, but how it breaks. Right now I'm looking for a role where I
       can put that range to work on real problems.</p>
-    <a href="#portfolio" class="btn">See My Work</a>
+    <div class="about-stats">
+      <div class="stat-box">
+        <h4>8</h4>
+        <p>Projects built</p>
+      </div>
+      <div class="stat-box">
+        <h4>9</h4>
+        <p>Languages used</p>
+      </div>
+      <div class="stat-box">
+        <h4>3</h4>
+        <p>Roles held</p>
+      </div>
+    </div>
+
+    <div class="about-btns">
+      <a href="#portfolio" class="btn">See My Work</a>
+      <a href="#resume" class="btn btn-outline">My Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- experience &amp; education section design -->
+<section class="resume" id="resume">
+  <h2 class="heading">Experience &amp; <span>Education</span></h2>
+
+  <div class="resume-container">
+    <div class="resume-column">
+      <h3 class="resume-title"><i class='bx bx-briefcase'></i>Experience</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2026 &mdash; Present</span>
+          <h4>Python Tutor</h4>
+          <h5>Pro Young Edu Service</h5>
+          <ul>
+            <li>Teach the Python programming language to primary and secondary
+              level students.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2026 &mdash; Present</span>
+          <h4>Maths Tutor</h4>
+          <h5>Singapore Maths Academy</h5>
+          <ul>
+            <li>Teach Singapore Mathematics to primary and secondary level
+              students.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2025 &mdash; Internship</span>
+          <h4>Technical Support, Sales Assistant &amp; Customer Service</h4>
+          <h5>Gloco Malaysia Sdn Bhd</h5>
+          <ul>
+            <li>Provided technical support to clinics facing problems with the
+              clinic management system.</li>
+            <li>Identified and diagnosed system issues through direct
+              communication with users.</li>
+            <li>Gathered user feedback to improve the experience of the
+              system.</li>
+            <li>Promoted the clinic management system over calls and
+              presentations, then followed up with clinics on next steps.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-column">
+      <h3 class="resume-title"><i class='bx bx-book-open'></i>Education</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2025 &mdash; Present</span>
+          <h4>BSc (Hons) in Computer Science (Cyber Security)</h4>
+          <h5>Asia Pacific University</h5>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2023 &mdash; 2025</span>
+          <h4>Diploma in Software Engineering</h4>
+          <h5>Asia Pacific University</h5>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -286,11 +368,17 @@
   <h2 class="heading">Contact <span>Me!</span></h2>
 
   <!--
-    TODO: this form has no backend yet, so submissions go nowhere.
-    Pick a free form service and put its endpoint in the action below, e.g.
-      <form action="https://formspree.io/f/YOUR_ID" method="POST">
+    Delivered by FormSubmit, which needs no account: it posts to the address in
+    the action below. main.js upgrades this to a background submit; with JS off
+    the plain POST still works and lands on FormSubmit's own thank-you page.
   -->
-  <form action="#" method="POST">
+  <form id="contact-form" action="https://formsubmit.co/zywong.hla@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New message from your portfolio">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Hidden from people, irresistible to bots: anything submitted here is dropped. -->
+    <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
     <div class="input-box">
       <input type="text" name="name" placeholder="Full Name" aria-label="Full name"
              autocomplete="name" required>
@@ -307,7 +395,14 @@
                 aria-label="Your message" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </div>
+
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
   </form>
+
+  <p class="contact-fallback">
+    Prefer your own mail client?
+    <a href="mailto:zywong.hla@gmail.com">zywong.hla@gmail.com</a>
+  </p>
 </section>
 
 <!-- footer design -->

@@ -18,12 +18,19 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
+}
+
+/* Both elements, and clip rather than hidden: overflow-x:hidden on <html>
+   alone is not honoured by iOS Safari, which is how a stray transform turned
+   into a sideways-scrolling page on a phone. */
+html,
+body {
+    overflow-x: clip;
 }
 
 /* Keep the width/height attributes on <img> as a hint for layout stability
@@ -172,17 +179,44 @@ span {
     background: white;
 }
 
+/* Secondary action: same pill, no fill, so it never competes with .btn. */
+.btn-outline {
+    background: transparent;
+    box-shadow: none;
+    color: var(--main-color);
+    border: .2rem solid var(--main-color);
+    padding: .8rem 2.6rem;
+}
+
+.btn-outline:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* Grid, not flex: the portrait needs a column of its own, or the long text
+   column starves it down to a thumbnail. */
 .about {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    /* Sized by its content: a forced 100vh only ever showed up as dead space
+       above and below on tall screens. */
+    min-height: auto;
+    padding-bottom: 8rem;
+    background: var(--second-bg-color);
+}
+
+.about-img {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: var(--second-bg-color);
 }
 
 .about-img img {
     width: 100%;
-    max-width: 600px;
+    max-width: 55rem;
     height: auto;
 }
 
@@ -203,6 +237,154 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+}
+
+/* Quick-facts strip: gives the text column enough body to sit level with
+   the portrait instead of trailing off under it. */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.about-stats .stat-box {
+    background: var(--bg-color);
+    border: .2rem solid var(--bg-color);
+    border-radius: 1.4rem;
+    padding: 1.8rem 1rem;
+    text-align: center;
+    transition: .5s ease;
+}
+
+.about-stats .stat-box:hover {
+    border-color: var(--main-color);
+    transform: translateY(-.5rem);
+}
+
+.about-stats .stat-box h4 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--main-color);
+    line-height: 1.1;
+}
+
+.about-content .about-stats .stat-box p {
+    font-size: 1.4rem;
+    margin: .4rem 0 0;
+}
+
+.about-btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/*======================== experience & education ==========================*/
+.resume h2 {
+    margin-bottom: 5rem;
+}
+
+.resume-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    gap: 3rem;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.resume-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+}
+
+.resume-title i {
+    font-size: 2.8rem;
+    color: var(--main-color);
+}
+
+/* The rail itself: one border down the left, dots drawn per item. */
+.timeline {
+    position: relative;
+    border-left: .2rem solid var(--second-bg-color);
+    padding-left: 3rem;
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--second-bg-color);
+    border: .2rem solid var(--second-bg-color);
+    border-radius: 1.6rem;
+    padding: 2rem 2.2rem;
+    transition: .5s ease;
+}
+
+.timeline-item + .timeline-item {
+    margin-top: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 2.4rem;
+    left: -3.9rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: .3rem solid var(--main-color);
+    transition: .5s ease;
+}
+
+.timeline-item:hover {
+    border-color: var(--main-color);
+    transform: translateY(-.5rem);
+}
+
+.timeline-item:hover::before {
+    background: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.timeline-item h4 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-top: .6rem;
+}
+
+.timeline-item h5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .7);
+    margin-top: .3rem;
+}
+
+.timeline-item ul {
+    margin-top: 1.2rem;
+    padding-left: 1.8rem;
+}
+
+.timeline-item ul li {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.timeline-item ul li + li {
+    margin-top: .6rem;
 }
 
 .skills h2 {
@@ -455,6 +637,50 @@ span {
     cursor: pointer;
 }
 
+.contact form .btn:disabled {
+    cursor: wait;
+    opacity: .6;
+}
+
+/* Bot bait: off-screen rather than display:none, which some bots skip. */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-status {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+    min-height: 2.2rem;
+}
+
+.form-status.is-success {
+    color: var(--main-color);
+}
+
+.form-status.is-error {
+    color: #ff6b6b;
+}
+
+.contact-fallback {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, .7);
+}
+
+.contact-fallback a {
+    color: var(--main-color);
+}
+
+.contact-fallback a:hover {
+    text-decoration: underline;
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -505,6 +731,11 @@ span {
     }
 
     .skills {
+        padding-bottom: 7rem;
+    }
+
+    .resume {
+        min-height: auto;
         padding-bottom: 7rem;
     }
 
@@ -560,15 +791,31 @@ span {
     }
 
     .about {
-        flex-direction: column-reverse;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Stacked: lead with the text, portrait underneath. */
+    .about-img {
+        order: 2;
     }
 
     .about img {
         margin-top: 4rem;
+        max-width: 40rem;
     }
 
     .skills h2 {
         margin-bottom: 3rem;
+    }
+
+    .resume h2 {
+        margin-bottom: 3rem;
+    }
+
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
     }
 
     .portfolio {
@@ -595,5 +842,14 @@ span {
 
     .contact form .input-box input {
         width: 100%;
+    }
+
+    /* Three stat tiles get cramped on the narrowest phones. */
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-stats .stat-box:last-child {
+        grid-column: 1 / -1;
     }
 }
