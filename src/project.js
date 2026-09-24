@@ -26,3 +26,24 @@ navbar.querySelectorAll('a').forEach((link) => {
 window.addEventListener('scroll', () => {
   header.classList.toggle('sticky', window.scrollY > 100);
 });
+
+/*===================== click-to-load video ================================
+   The walkthrough is ~11MB, so nothing is fetched until the visitor asks
+   for it. Swapping the placeholder for a <video> is what starts the
+   download. */
+document.querySelectorAll('.video-placeholder').forEach((placeholder) => {
+  placeholder.addEventListener('click', () => {
+    const video = document.createElement('video');
+    video.src = placeholder.dataset.video;
+    video.className = 'video-player';
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.setAttribute(
+      'aria-label',
+      placeholder.dataset.label || 'Project walkthrough',
+    );
+    placeholder.replaceWith(video);
+    video.focus();
+  });
+});

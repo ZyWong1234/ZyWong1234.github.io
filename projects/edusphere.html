@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EduSphere — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="An ASP.NET e-learning platform with materials, quizzes, virtual labs and community features across administrator, lecturer and student roles. I built the layered avatar customisation system and its profile integration.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>Edu<span>Sphere</span></h1>
+  <p class="project-tagline">
+    An ASP.NET e-learning platform built by a project team, spanning learning
+    materials, quizzes, virtual labs and community features across three roles.
+    My contribution was the avatar system — a layered character builder and its
+    integration into every user's profile.
+  </p>
+
+  <ul class="tech-tags">
+    <li>C#</li>
+    <li>ASP.NET Web Forms</li>
+    <li>.NET Framework 4.8</li>
+    <li>SQL Server</li>
+    <li>ADO.NET</li>
+    <li>IIS</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>Group coursework</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>Full-Stack Developer — Avatar System</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>(Month Year – Month Year)</dd>
+    </div>
+    <div>
+      <dt>Platform</dt>
+      <dd>Web browser</dd>
+    </div>
+  </dl>
+
+  <a href="https://github.com/BennChen23/wapp" class="btn btn-icon" target="_blank" rel="noopener">
+    <i class='bx bxl-github'></i> View Source on GitHub
+  </a>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    EduSphere is a learning platform covering the pieces a course actually needs:
+    lecturers upload materials, set quizzes and run virtual lab sessions; students
+    browse materials, sit quizzes, join labs and track their own learning; and
+    administrators oversee content, community and accounts from a command centre.
+  </p>
+  <p>
+    It is built on ASP.NET Web Forms against SQL Server, with the interface split
+    into role-specific areas so each type of user only ever sees their own part
+    of the system.
+  </p>
+  <p>
+    A platform students return to daily needs some reason to feel like theirs,
+    which is where my part comes in. Rather than uploading a profile picture —
+    which invites moderation problems and inconsistent visuals — EduSphere lets
+    every user assemble an avatar from a set of hand-drawn parts, so identity is
+    expressive while staying entirely within the platform's own art style.
+  </p>
+</section>
+
+<!-- my contribution -->
+<section class="alt-bg">
+  <h2 class="section-title">The Avatar <span>System</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-layer'></i>
+      <h3>Layered composition</h3>
+      <p>
+        Avatars are built from three stacked layers — head, face and accessory —
+        composited live so a change is visible immediately in the preview.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-palette'></i>
+      <h3>Part catalogue</h3>
+      <p>
+        Each layer offers its own grid of options, loaded from the database rather
+        than hard-coded, so new parts can be added without touching the page.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-x-circle'></i>
+      <h3>Optional layers</h3>
+      <p>
+        Any layer can be cleared, so an avatar works with or without an accessory
+        instead of forcing a choice from every category.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-data'></i>
+      <h3>Persisted selections</h3>
+      <p>
+        Choices are saved per user and reloaded on return, with a uniqueness
+        constraint keeping one selection per user and part.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-user-circle'></i>
+      <h3>Profile integration</h3>
+      <p>
+        The saved avatar becomes the user's identity across the platform, editable
+        from their settings page through a Change Avatar action.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-mouse'></i>
+      <h3>Direct interaction</h3>
+      <p>
+        Parts are picked by clicking the piece itself rather than through dropdowns,
+        which keeps the whole builder on one screen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- screenshots -->
+<section>
+  <h2 class="section-title">What I <span>Built</span></h2>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="../images/avatar.png" width="602" height="362" loading="lazy"
+           alt="Avatar customisation screen with a live preview above grids of head, face and accessory options">
+      <figcaption>
+        <strong>Avatar builder.</strong> The live preview sits above the part
+        catalogue, with head, face and accessory laid out as their own grids and
+        the current selection highlighted. Each category carries a clear option,
+        so a layer can be removed rather than merely swapped.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/avatar1.png" width="602" height="261" loading="lazy"
+           alt="Settings page showing the saved avatar above a Change Avatar button and profile fields">
+      <figcaption>
+        <strong>Profile integration.</strong> The saved avatar is rendered as the
+        user's identity on their settings page, with Change Avatar leading back
+        into the builder. The name and email fields are blanked here deliberately,
+        since the original capture held a real account's details.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- walkthrough -->
+<section class="alt-bg">
+  <h2 class="section-title">Platform <span>Walkthrough</span></h2>
+  <p>
+    A recorded run through the EduSphere home page and the wider platform, showing
+    where the avatar system sits in the finished product.
+  </p>
+
+  <figure class="shot" style="background:none;box-shadow:none">
+    <button type="button" class="video-placeholder"
+            data-video="/video/vid.mp4" data-label="EduSphere platform walkthrough">
+      <span class="video-play"><i class='bx bx-play'></i></span>
+      <span class="video-label">Play walkthrough · 11 MB · nothing downloads until you press play</span>
+    </button>
+  </figure>
+</section>
+
+<!-- contribution -->
+<section>
+  <h2 class="section-title">My <span>Contribution</span></h2>
+  <p>
+    Built as part of a project team, with areas of the platform divided between
+    members. The avatar system was mine, front end through to database.
+  </p>
+  <ul class="role-list">
+    <li>Designed and built the avatar customisation page, including the live composite preview and the clickable part catalogue for each layer.</li>
+    <li>Modelled the avatar data in SQL Server as catalogue and per-user selection tables, with a constraint preventing duplicate selections.</li>
+    <li>Implemented loading the part catalogue from the database, restoring a returning user's existing selections, and saving changes back.</li>
+    <li>Handled clearing individual layers so an avatar can omit a category entirely.</li>
+    <li>Integrated the saved avatar into the profile settings page as the user's identity across the platform.</li>
+    <li>(Add anything else you owned here.)</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="enterprise-network.html"><i class='bx bx-left-arrow-alt'></i> Previous: Multi-Site Enterprise Network</a>
+  <a href="../index.html#portfolio">All projects <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>

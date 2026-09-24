@@ -18,6 +18,7 @@ export default defineConfig({
         psychologySystem: here('projects/psychology-system.html'),
         assessmentFeedback: here('projects/assessment-feedback-system.html'),
         enterpriseNetwork: here('projects/enterprise-network.html'),
+        eduSphere: here('projects/edusphere.html'),
       },
     },
   },
