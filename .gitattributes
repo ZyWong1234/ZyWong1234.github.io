@@ -1,0 +1,7 @@
+# Normalize line endings so editing from Windows (WebStorm) and WSL
+# does not produce whole-file diffs.
+* text=auto eol=lf
+
+*.png binary
+*.woff2 binary
+*.pdf binary
