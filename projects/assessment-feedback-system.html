@@ -169,8 +169,47 @@
   </div>
 </section>
 
-<!-- architecture -->
+<!-- screenshots -->
 <section>
+  <h2 class="section-title">Inside the <span>Application</span></h2>
+
+  <div class="shots">
+    <figure class="shot shot--narrow">
+      <img src="../images/afs_login.png" width="484" height="540" loading="lazy"
+           alt="Assessment Feedback System role selection window with buttons for Administrator, Academic Leader, Lecturer and Student">
+      <figcaption>
+        <strong>Role selection.</strong> The entry point into the application.
+        Choosing a role determines which credential file is checked at login and
+        which identifier format is enforced, so the four audiences are separated
+        before authentication rather than after it.
+      </figcaption>
+    </figure>
+
+    <figure class="shot shot--medium">
+      <img src="../images/afs_AL.png" width="604" height="404" loading="lazy"
+           alt="Academic Leader Dashboard listing unassigned modules with Assign Lecturer buttons above a list of assigned modules">
+      <figcaption>
+        <strong>Academic leader dashboard.</strong> Modules are split into
+        unassigned and assigned, so the outstanding work is the first thing on
+        screen. Each unassigned module carries its own Assign Lecturer action,
+        with reporting and module creation reachable from the corner.
+      </figcaption>
+    </figure>
+
+    <figure class="shot shot--medium">
+      <img src="../images/afs_announcement.png" width="604" height="404" loading="lazy"
+           alt="Announcements dialog showing a table of announcement titles, content and dates over the dashboard">
+      <figcaption>
+        <strong>Announcements.</strong> A modal listing announcements with their
+        title, content and date. The repository behind it filters by target role,
+        so each audience sees only the notices meant for them.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- architecture -->
+<section class="alt-bg">
   <h2 class="section-title">How It Is <span>Built</span></h2>
   <p>
     The application is a NetBeans Java project built with Apache Ant, launching
@@ -196,7 +235,7 @@
 </section>
 
 <!-- contribution -->
-<section class="alt-bg">
+<section>
   <h2 class="section-title">What I <span>Built</span></h2>
   <p>
     Built collaboratively with teammates, each owning part of the system. My

@@ -302,3 +302,15 @@
 .btn-icon i {
     font-size: 2rem;
 }
+
+/* Screenshots smaller than the content column should sit at their native
+   size rather than being upscaled into a blurry mess. */
+.shot--narrow img {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.shot--medium img {
+    max-width: 62rem;
+    margin: 0 auto;
+}
