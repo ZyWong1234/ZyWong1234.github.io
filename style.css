@@ -25,6 +25,13 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+
+/* Keep the width/height attributes on <img> as a hint for layout stability
+   only -- never let them override the rendered aspect ratio. */
+img {
+    max-width: 100%;
+    height: auto;
+}
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
@@ -249,9 +256,11 @@ span {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    align-items: start;
     gap: 2.5rem;
+    max-width: 110rem;
+    margin: 0 auto;
 }
 
 .portfolio-container .portfolio-box {
@@ -264,6 +273,10 @@ span {
 
 .portfolio-box img {
     width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+    display: block;
     transition: .5s ease;
 }
 
