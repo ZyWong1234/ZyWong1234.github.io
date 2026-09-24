@@ -53,8 +53,8 @@
     <li>Java</li>
     <li>Swing GUI</li>
     <li>Object-oriented design</li>
-    <li>File-based persistence</li>
     <li>Role-based access</li>
+    <!-- TODO: add how data was stored (text files, serialization, MySQL...) -->
   </ul>
 
   <dl class="project-meta">
@@ -64,11 +64,11 @@
     </div>
     <div>
       <dt>My role</dt>
-      <dd>(Your role, e.g. application developer)</dd>
+      <dd>Full-Stack Developer — Lecturer System</dd>
     </div>
     <div>
       <dt>Timeline</dt>
-      <dd>(Month Year – Month Year)</dd>
+      <dd>2024</dd>
     </div>
     <div>
       <dt>Platform</dt>
@@ -197,13 +197,20 @@
 <!-- contribution -->
 <section class="alt-bg">
   <h2 class="section-title">What I <span>Built</span></h2>
+  <p>
+    I was the full-stack developer for the lecturer system — the supply side of
+    the platform, where availability is published and incoming requests are
+    resolved. I owned that module from the Swing interface through to the data
+    it reads and writes.
+  </p>
   <ul class="role-list">
-    <li>Modelled the domain in Java — users, consultation slots, appointments and feedback — as a set of collaborating classes.</li>
-    <li>Built the Swing interfaces for both the student and lecturer dashboards.</li>
-    <li>Implemented role-based routing so login determines which dashboard and permissions a user receives.</li>
-    <li>Developed the booking and rescheduling logic that keeps appointment state consistent between both parties.</li>
-    <li>Implemented the two-way feedback flow linking each record back to its consultation.</li>
-    <li>(Add anything else you owned here — persistence, validation, reporting, or team coordination.)</li>
+    <li>Built the lecturer module end to end, from the Swing interface through to the data layer behind it.</li>
+    <li>Implemented consultation slot management, letting lecturers publish the windows students can book against.</li>
+    <li>Developed the appointment views covering both upcoming and past consultations.</li>
+    <li>Built the rescheduling workflow so change requests are resolved as a tracked action rather than ad-hoc messages.</li>
+    <li>Implemented consultation feedback recording, producing the notes students read back on their own dashboard.</li>
+    <li>Built the student feedback view so lecturers can read the feedback left against their sessions.</li>
+    <li>(Add anything else you owned here — data modelling, validation, reporting, or team coordination.)</li>
   </ul>
 </section>
 
