@@ -270,27 +270,6 @@
     font-size: .9rem;
 }
 
-/* Secondary action sitting next to the solid .btn */
-.btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: .7rem;
-    margin-left: 1.2rem;
-    background: transparent;
-    border: .2rem solid var(--main-color);
-    color: var(--main-color);
-    box-shadow: none;
-}
-
-.btn-ghost:hover {
-    background: var(--main-color);
-    color: var(--second-bg-color);
-}
-
-.btn-ghost i {
-    font-size: 2rem;
-}
-
 .inline-link {
     color: var(--main-color);
     border-bottom: .1rem solid currentColor;
@@ -311,11 +290,4 @@
 
 .role-list li strong {
     color: var(--text-color);
-}
-
-@media (max-width: 617px) {
-    .btn-ghost {
-        margin-left: 0;
-        margin-top: 1.2rem;
-    }
 }
