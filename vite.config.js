@@ -8,6 +8,10 @@ const here = (p) => fileURLToPath(new URL(p, import.meta.url));
 // Multi-page setup: every HTML entry point has to be listed, otherwise Vite
 // only builds index.html and the project pages 404 in production.
 export default defineConfig({
+  // Every built asset path is root-absolute, so a project repo served from
+  // https://<user>.github.io/<repo>/ needs that prefix baked in. The deploy
+  // workflow works it out and passes it here; locally this stays "/".
+  base: process.env.BASE_PATH || '/',
   build: {
     rollupOptions: {
       input: {
