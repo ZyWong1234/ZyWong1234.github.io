@@ -16,6 +16,7 @@ export default defineConfig({
         superMathsBros: here('projects/super-maths-bros.html'),
         hypertextEdu: here('projects/hypertext-edu.html'),
         psychologySystem: here('projects/psychology-system.html'),
+        assessmentFeedback: here('projects/assessment-feedback-system.html'),
       },
     },
   },

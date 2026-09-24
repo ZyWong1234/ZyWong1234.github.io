@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Assessment Feedback System — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="A Java Swing desktop application managing university coursework end to end across four roles: administrators, academic leaders, lecturers and students, covering classes, assessments, grading, submissions and feedback.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>Assessment <span>Feedback System</span></h1>
+  <p class="project-tagline">
+    A Java desktop application covering the full coursework lifecycle at a
+    university — from an academic leader designing an assessment through to a
+    student reading the feedback on their mark — across four distinct roles.
+  </p>
+
+  <ul class="tech-tags">
+    <li>Java</li>
+    <li>Swing GUI</li>
+    <li>Apache Ant</li>
+    <li>NetBeans</li>
+    <li>Object-oriented design</li>
+    <li>Text-file persistence</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>(Group coursework / individual assignment)</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>(Your role on this project)</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>(Month Year – Month Year)</dd>
+    </div>
+    <div>
+      <dt>Platform</dt>
+      <dd>Windows desktop</dd>
+    </div>
+  </dl>
+
+  <a href="https://github.com/ZyWong1234/Assessment-Feedback-System" class="btn btn-icon"
+     target="_blank" rel="noopener">
+    <i class='bx bxl-github'></i> View Source on GitHub
+  </a>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    Coursework assessment involves more people than it first appears. Somebody has
+    to create the classes and decide the grading scheme, somebody has to be
+    assigned to teach and mark them, students have to enrol and submit, and the
+    feedback has to find its way back to the right person. Handled across
+    spreadsheets and email, those steps drift out of sync almost immediately.
+  </p>
+  <p>
+    The Assessment Feedback System models that whole chain as one application with
+    four roles. An administrator manages accounts and announcements. An academic
+    leader sets up modules, classes, assessment types and the grading system, then
+    assigns lecturers to modules. Lecturers work through their assigned modules,
+    mark submissions and leave feedback. Students browse available classes, enrol,
+    track deadlines, submit work and read their results.
+  </p>
+  <p>
+    Each role signs in through its own route and lands on a dashboard scoped to
+    what that role can actually do, so the same underlying records are presented
+    differently depending on who is looking at them.
+  </p>
+</section>
+
+<!-- features -->
+<section class="alt-bg">
+  <h2 class="section-title">Four <span>Roles</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-shield-quarter'></i>
+      <h3>Administrator</h3>
+      <p>
+        Manages user accounts and user types, creates classes, defines the grading
+        system, assigns lecturers, and publishes announcements across the platform.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-sitemap'></i>
+      <h3>Academic Leader</h3>
+      <p>
+        Oversees modules and sees at a glance which are assigned and which are not,
+        assigning lecturers to close the gap.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-edit'></i>
+      <h3>Lecturer</h3>
+      <p>
+        Works through assigned modules with assessment reminders, grading dialogs,
+        marks entry and a feedback flow back to students.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-user-voice'></i>
+      <h3>Student</h3>
+      <p>
+        Browses available classes, enrols, tracks assessment deadlines, submits
+        work, and reviews a results summary alongside lecturer feedback.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-conversation'></i>
+      <h3>Feedback &amp; comments</h3>
+      <p>
+        Feedback and threaded comments run between lecturers and students, so a
+        mark arrives with the reasoning attached rather than as a bare number.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-file'></i>
+      <h3>Reporting</h3>
+      <p>
+        Marks, grades and submissions feed a reporting view, turning individual
+        records into a picture of how a cohort is performing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- architecture -->
+<section>
+  <h2 class="section-title">How It Is <span>Built</span></h2>
+  <p>
+    The application is a NetBeans Java project built with Apache Ant, launching
+    into a role selection screen before authentication. Around sixty classes are
+    organised along clear lines: entity types such as
+    <code>User</code>, <code>Module</code>, <code>Class</code>,
+    <code>Enrollment</code>, <code>Submission</code>, <code>Mark</code>,
+    <code>Grade</code>, <code>Feedback</code> and <code>Comment</code>; service
+    classes holding the logic for each; and Swing dialogs and dashboards for the
+    interface.
+  </p>
+  <p>
+    There is no database engine. All state persists to fourteen structured text
+    files — users split by role, plus modules, classes, enrolments, marks, grading
+    systems, submissions, comments, reports and announcements — which meant
+    designing a record format and the read, write and parse routines by hand.
+  </p>
+  <p>
+    Authentication runs through a dedicated service with identifier validation, and
+    each role's controller mediates between its dashboard and the services beneath,
+    keeping interface code separate from the rules it depends on.
+  </p>
+</section>
+
+<!-- contribution -->
+<section class="alt-bg">
+  <h2 class="section-title">What I <span>Built</span></h2>
+  <ul class="role-list">
+    <li>(Describe the part of this system you owned — which roles, which screens, which services.)</li>
+    <li>(If this was a group project, note which modules were yours.)</li>
+    <li>(Anything you want to highlight — the persistence layer, the grading logic, the reporting.)</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="psychology-system.html"><i class='bx bx-left-arrow-alt'></i> Previous: APU Psychology System</a>
+  <a href="../index.html#portfolio">All projects <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>
