@@ -31,7 +31,7 @@
 
 <!-- header design -->
 <header class="header">
-  <a href="#home" class="logo">Portfolio</a>
+  <a href="#home" class="logo">Wong Zhi Yoong</a>
 
   <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
           aria-controls="navbar"></button>
@@ -39,8 +39,8 @@
   <nav class="navbar" id="navbar">
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -51,7 +51,8 @@
     <h3>Hello, It's Me</h3>
     <h1>Wong Zhi Yoong</h1>
     <h3>And I'm a <span class="multiple-text"></span></h3>
-    <p>(Input some details)</p>
+    <p>A final-year computing student who builds full-stack web apps, desktop
+      systems and networks — and enjoys breaking them to learn how to secure them.</p>
     <div class="social-media">
       <!-- TODO: replace the "#" with your real profile URLs -->
       <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
@@ -75,46 +76,109 @@
 
   <div class="about-content">
     <h2 class="heading">About <span>Me</span></h2>
-    <h3>Web Developer</h3>
-    <!-- TODO: replace this placeholder with your own bio -->
-    <p>(Write two or three sentences about your degree, the kind of systems you
-      like building, and what you are looking for next.)</p>
-    <a href="#" class="btn">Read More</a>
+    <h3>Full-Stack Developer</h3>
+    <p>I'm a computing student who likes building things people actually use.
+      Over the past couple of years I've worked across a real spread of stacks —
+      a production website for a boutique florist on SvelteKit and Cloudflare,
+      coursework platforms in PHP and MySQL, Java, and ASP.NET, and a top-down
+      learning game in Python. I tend to gravitate toward the whole picture of a
+      project: the interface, the logic behind it, and the database underneath.</p>
+    <p>More recently I've moved into networking and cybersecurity — designing
+      multi-site networks in Cisco Packet Tracer, and running authentication and
+      brute-force testing in Kali Linux. I like understanding not just how to
+      build a system, but how it breaks. Right now I'm looking for a role where I
+      can put that range to work on real problems.</p>
+    <a href="#portfolio" class="btn">See My Work</a>
   </div>
 </section>
 
-<!-- Services section design -->
-<section class="services" id="services">
-  <h2 class="heading">My <span>Services</span></h2>
+<!-- Skills section design -->
+<section class="skills" id="skills">
+  <h2 class="heading">My <span>Skills</span></h2>
 
-  <div class="services-container">
-    <div class="service-box">
-      <i class='bx bx-code'></i>
-      <h3>Web Development</h3>
-      <!-- TODO: describe what you actually offer -->
-      <p>(Describe this service in a sentence or two.)</p>
-      <a href="#" class="btn">Read More</a>
+  <div class="skills-container">
+    <div class="skill-box">
+      <i class='bx bx-code-alt'></i>
+      <h3>Languages</h3>
+      <ul class="skill-tags">
+        <li>Python</li>
+        <li>Java</li>
+        <li>C#</li>
+        <li>PHP</li>
+        <li>TypeScript</li>
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>SQL</li>
+      </ul>
     </div>
 
-    <div class="service-box">
-      <i class='bx bx-server'></i>
-      <h3>(Service)</h3>
-      <p>(Describe this service in a sentence or two.)</p>
-      <a href="#" class="btn">Read More</a>
+    <div class="skill-box">
+      <i class='bx bx-layer'></i>
+      <h3>Frameworks &amp; Libraries</h3>
+      <ul class="skill-tags">
+        <li>SvelteKit</li>
+        <li>Svelte 5</li>
+        <li>ASP.NET Web Forms</li>
+        <li>Java Swing</li>
+        <li>Pygame</li>
+        <li>Tailwind CSS</li>
+        <li>Drizzle ORM</li>
+      </ul>
     </div>
 
-    <div class="service-box">
+    <div class="skill-box">
       <i class='bx bx-data'></i>
-      <h3>(Service)</h3>
-      <p>(Describe this service in a sentence or two.)</p>
-      <a href="#" class="btn">Read More</a>
+      <h3>Databases &amp; Backend</h3>
+      <ul class="skill-tags">
+        <li>MySQL</li>
+        <li>SQL Server</li>
+        <li>Cloudflare D1</li>
+        <li>ADO.NET</li>
+        <li>better-auth</li>
+        <li>REST &amp; server logic</li>
+      </ul>
     </div>
 
-    <div class="service-box">
-      <i class='bx bx-palette'></i>
-      <h3>(Service)</h3>
-      <p>(Describe this service in a sentence or two.)</p>
-      <a href="#" class="btn">Read More</a>
+    <div class="skill-box">
+      <i class='bx bx-cloud'></i>
+      <h3>Cloud &amp; Tools</h3>
+      <ul class="skill-tags">
+        <li>Cloudflare Workers</li>
+        <li>Cloudflare R2</li>
+        <li>Apache</li>
+        <li>IIS</li>
+        <li>Git &amp; GitHub</li>
+        <li>Vite</li>
+        <li>NetBeans</li>
+      </ul>
+    </div>
+
+    <div class="skill-box">
+      <i class='bx bx-network-chart'></i>
+      <h3>Networking</h3>
+      <ul class="skill-tags">
+        <li>Cisco Packet Tracer</li>
+        <li>VLANs &amp; VLSM</li>
+        <li>OSPF</li>
+        <li>HSRP</li>
+        <li>EtherChannel</li>
+        <li>WLC / WPA2</li>
+      </ul>
+    </div>
+
+    <div class="skill-box">
+      <i class='bx bx-shield-quarter'></i>
+      <h3>Cybersecurity</h3>
+      <ul class="skill-tags">
+        <li>Kali Linux</li>
+        <li>Nmap</li>
+        <li>Wireshark</li>
+        <li>Burp Suite</li>
+        <li>Hydra</li>
+        <li>Metasploit</li>
+        <li>DVWA</li>
+      </ul>
     </div>
   </div>
 </section>

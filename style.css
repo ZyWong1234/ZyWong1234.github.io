@@ -205,45 +205,61 @@ span {
     margin: 2rem 0 3rem;
 }
 
-.services h2 {
+.skills h2 {
     margin-bottom: 5rem
 }
 
-.services-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
-.services-container .service-box {
-    flex: 1 1 30rem;
+.skills-container .skill-box {
     background: var(--second-bg-color);
-    padding: 3rem 2rem 4rem;
+    padding: 3rem 2.5rem;
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
 }
 
-.services-container .service-box:hover {
+.skills-container .skill-box:hover {
     border-color: var(--main-color);
-    transform: scale(1.02);
+    transform: translateY(-.5rem);
 }
 
-.service-box i {
-    font-size: 7rem;
+.skill-box i {
+    font-size: 5rem;
     color: var(--main-color);
 }
 
-.service-box h3 {
-    font-size: 2.6rem;
+.skill-box h3 {
+    font-size: 2.4rem;
+    margin: .5rem 0 2rem;
 }
 
-.service-box p {
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.skill-tags li {
+    font-size: 1.4rem;
+    padding: .6rem 1.4rem;
+    border: .15rem solid var(--main-color);
+    border-radius: 4rem;
+    color: var(--main-color);
+    transition: .3s ease;
+}
+
+.skill-box:hover .skill-tags li {
+    background: rgba(0, 238, 255, .08);
 }
 
 .portfolio {
@@ -488,7 +504,7 @@ span {
         padding: 10rem 3% 2rem;
     }
 
-    .services {
+    .skills {
         padding-bottom: 7rem;
     }
 
@@ -551,7 +567,7 @@ span {
         margin-top: 4rem;
     }
 
-    .services h2 {
+    .skills h2 {
         margin-bottom: 3rem;
     }
 
