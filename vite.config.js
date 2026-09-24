@@ -12,6 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: here('index.html'),
+        moonAndBloom: here('projects/moon-and-bloom.html'),
         superMathsBros: here('projects/super-maths-bros.html'),
         hypertextEdu: here('projects/hypertext-edu.html'),
         psychologySystem: here('projects/psychology-system.html'),

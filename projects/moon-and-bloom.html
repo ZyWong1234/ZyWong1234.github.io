@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Moon and Bloom — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="A production website for a boutique florist, built with SvelteKit and Svelte 5 and deployed on Cloudflare Workers, D1 and R2. Includes a full admin backoffice, role-based staff accounts and a custom balloon design enquiry flow.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <span class="live-badge"><i class='bx bxs-circle'></i> Live in production</span>
+
+  <h1>Moon and Bloom <span>花月</span></h1>
+  <p class="project-tagline">
+    A production website for a boutique florist — a public storefront backed by a
+    full admin backoffice the shop owner runs themselves, deployed on Cloudflare's
+    edge platform and shipped continuously from GitHub.
+  </p>
+
+  <ul class="tech-tags">
+    <li>SvelteKit 2</li>
+    <li>Svelte 5 (runes)</li>
+    <li>TypeScript</li>
+    <li>Tailwind CSS v4</li>
+    <li>Cloudflare Workers</li>
+    <li>Cloudflare D1</li>
+    <li>Cloudflare R2</li>
+    <li>Drizzle ORM</li>
+    <li>better-auth</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>Real-world client project</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>Full-Stack Developer</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>September 2026</dd>
+    </div>
+    <div>
+      <dt>Status</dt>
+      <dd>Live and in use</dd>
+    </div>
+  </dl>
+
+  <a href="https://moonandbloomfloral.com/" class="btn" target="_blank" rel="noopener">
+    Visit Live Site
+  </a>
+  <a href="https://github.com/ZyWong1234/Moon-and-Bloom" class="btn btn-ghost" target="_blank" rel="noopener">
+    <i class='bx bxl-github'></i> View Source
+  </a>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    Moon and Bloom is a boutique florist selling seasonal arrangements and balloon
+    displays. The brief was a storefront that looks the part, but the real
+    requirement was operational: the owner had to be able to run the catalogue
+    themselves, without a developer in the loop every time a flower sells out or
+    a price changes.
+  </p>
+  <p>
+    So the site is two applications sharing one codebase. The public half is a
+    fast, SEO-focused marketing site — collection pages, individual flower and
+    balloon pages, an about page and an enquiry form. The private half is an admin
+    backoffice at <code>/admin</code> where the florist manages flowers, photographs,
+    categories, shop details and incoming enquiries.
+  </p>
+  <p>
+    Payments were deliberately left out of scope. Rather than bolt on a checkout
+    the shop was not ready to operate, the database schema keeps the seams open —
+    <code>price_cents</code> and <code>stripe_price_id</code> already exist — so a
+    checkout can be added later without a rewrite. Scoping that decision explicitly
+    kept the first release small enough to actually ship.
+  </p>
+</section>
+
+<!-- features -->
+<section class="alt-bg">
+  <h2 class="section-title">Key <span>Features</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-store'></i>
+      <h3>Public storefront</h3>
+      <p>
+        Home, flowers, balloons, about and contact pages, with individual pages
+        per item generated from the database rather than hand-written.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-list-check'></i>
+      <h3>Admin backoffice</h3>
+      <p>
+        The florist manages flowers, images, categories, shop details and
+        enquiries from a private dashboard — no developer involvement needed.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-palette'></i>
+      <h3>Custom balloon designer</h3>
+      <p>
+        A guided enquiry flow capturing occasion, colour scheme, quantity, date
+        and budget, so a bespoke request arrives with everything already answered.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-shield-quarter'></i>
+      <h3>Role-based staff accounts</h3>
+      <p>
+        Superadmin and admin roles with no public sign-up. Every admin route is
+        guarded server-side, so a new admin page is private by default.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-search-alt'></i>
+      <h3>SEO built in</h3>
+      <p>
+        Per-page canonical URLs and Open Graph tags, Florist and Product JSON-LD
+        structured data, and a sitemap generated live from available stock.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-cloud'></i>
+      <h3>Edge deployment</h3>
+      <p>
+        Runs on Cloudflare Workers with D1 for data and R2 for images. Pushing to
+        main triggers a build and deploy automatically.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- screenshot -->
+<section>
+  <h2 class="section-title">The <span>Storefront</span></h2>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="../images/moon-and-bloom.png" width="1268" height="765" loading="lazy"
+           alt="Moon and Bloom homepage with the headline Flowers for the moments that matter, calls to action and a featured seasonal collection">
+      <figcaption>
+        <strong>Home page.</strong> The hero leads with the shop's positioning and
+        two deliberate calls to action — browse the catalogue, or start a WhatsApp
+        conversation, which is how this customer base actually prefers to order.
+        Below it, a featured seasonal collection pulled live from the database.
+      </figcaption>
+    </figure>
+  </div>
+
+  <p style="margin-top:2.5rem">
+    The site is live at
+    <a href="https://moonandbloomfloral.com/" target="_blank" rel="noopener" class="inline-link">moonandbloomfloral.com</a>
+    — the fastest way to see the rest of it.
+  </p>
+</section>
+
+<!-- engineering decisions -->
+<section class="alt-bg">
+  <h2 class="section-title">Engineering <span>Decisions</span></h2>
+
+  <ul class="role-list">
+    <li><strong>Deploys are a git push.</strong> Pushing to main triggers a Cloudflare Workers build. Deploying from a laptop was deliberately retired, because it uploads uncommitted working-directory changes and silently drifts the live site away from main.</li>
+    <li><strong>Migrations are not automatic.</strong> A generated SQLite migration can rebuild a whole table, which is not something that should fire on every push, so schema changes are applied deliberately and before the code depending on them ships.</li>
+    <li><strong>Authorization lives in one place.</strong> Route guards run in server hooks with the rules in a single authz module, so access is decided once rather than re-implemented per page.</li>
+    <li><strong>Secrets are stored as Worker secrets</strong>, not dashboard variables — a plain variable added in the dashboard is dropped by the next deploy, since a deploy uploads a complete set of bindings from config.</li>
+    <li><strong>The enquiry forms carry a honeypot field</strong> and are rate limited, with authentication events recorded, keeping spam and brute-force attempts off a site with no captcha.</li>
+  </ul>
+</section>
+
+<!-- contribution -->
+<section>
+  <h2 class="section-title">What I <span>Built</span></h2>
+  <p>
+    I built and shipped this project end to end — design implementation, front
+    end, backend, database, authentication, deployment and the operational
+    documentation the shop runs on.
+  </p>
+  <ul class="role-list">
+    <li>Built the public storefront in SvelteKit with Svelte 5 runes and Tailwind CSS v4.</li>
+    <li>Designed the Drizzle schema covering flowers, images, categories, shop details, enquiries, rate limiting and authentication events.</li>
+    <li>Implemented the admin backoffice for catalogue, media, category, shop-detail and enquiry management.</li>
+    <li>Set up authentication with better-auth, including role-based guards, a one-time bootstrap route for the first account, and superadmin-managed accounts thereafter.</li>
+    <li>Built image upload and delivery through Cloudflare R2, served via a dedicated route.</li>
+    <li>Implemented the SEO layer: per-page metadata, JSON-LD structured data, and a sitemap generated from live availability.</li>
+    <li>Configured deployment on Cloudflare Workers with D1 and R2 bindings, and continuous deployment from GitHub.</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="../index.html#portfolio"><i class='bx bx-left-arrow-alt'></i> All projects</a>
+  <a href="super-maths-bros.html">Next: Super M4ths Bros <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>

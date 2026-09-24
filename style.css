@@ -256,11 +256,51 @@ span {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     align-items: start;
     gap: 2.5rem;
-    max-width: 110rem;
+    max-width: 120rem;
     margin: 0 auto;
+}
+
+/* The real-world project gets the full width of the grid. */
+.portfolio-container .portfolio-box.featured {
+    grid-column: 1 / -1;
+    border: .25rem solid var(--main-color);
+    box-shadow: 0 0 2.5rem rgba(0, 238, 255, .25);
+}
+
+.portfolio-box.featured img {
+    aspect-ratio: 24 / 9;
+}
+
+/* Featured card stays readable without needing a hover. */
+.portfolio-box.featured .portfolio-layer {
+    transform: translateY(0);
+    background: linear-gradient(rgba(31, 36, 45, .25), rgba(31, 36, 45, .96) 55%);
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.6rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .6rem 1.4rem;
+    border-radius: 4rem;
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+}
+
+.portfolio-badge i {
+    font-size: .9rem;
 }
 
 .portfolio-container .portfolio-box {
@@ -308,7 +348,9 @@ span {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 0 4rem;
+    /* Was 0 4rem with no vertical room, so longer copy spilled past the card. */
+    padding: 2rem 3rem;
+    overflow-y: auto;
     transform: translateY(100%);
     transition: .5s ease;
 }
@@ -318,12 +360,19 @@ span {
 }
 
 .portfolio-layer h4 {
-    font-size: 3rem;
+    font-size: 2.6rem;
+    line-height: 1.25;
 }
 
 .portfolio-layer p {
-    font-size: 1.6rem;
-    margin: .3rem 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: .8rem 0 1.2rem;
+    max-width: 52rem;
+}
+
+.portfolio-box.featured .portfolio-layer h4 {
+    font-size: 3.4rem;
 }
 
 .portfolio-cta {
@@ -511,13 +560,15 @@ span {
     }
 
     .portfolio-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 617px) {
-    .portfolio-container {
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-container .portfolio-box.featured {
+        grid-column: auto;
+    }
+
+    .portfolio-box.featured img {
+        aspect-ratio: 16 / 10;
     }
 }
 
