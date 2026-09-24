@@ -61,15 +61,15 @@
   <dl class="project-meta">
     <div>
       <dt>Project type</dt>
-      <dd>(Group coursework / individual assignment)</dd>
+      <dd>Group coursework</dd>
     </div>
     <div>
       <dt>My role</dt>
-      <dd>(Your role on this project)</dd>
+      <dd>Full-Stack Developer</dd>
     </div>
     <div>
       <dt>Timeline</dt>
-      <dd>(Month Year – Month Year)</dd>
+      <dd>December 2025 – January 2026</dd>
     </div>
     <div>
       <dt>Platform</dt>
@@ -198,10 +198,18 @@
 <!-- contribution -->
 <section class="alt-bg">
   <h2 class="section-title">What I <span>Built</span></h2>
+  <p>
+    Built collaboratively with teammates, each owning part of the system. My
+    share covered the way users get into the application, the academic leader's
+    half of it, and the announcements that reach every role.
+  </p>
   <ul class="role-list">
-    <li>(Describe the part of this system you owned — which roles, which screens, which services.)</li>
-    <li>(If this was a group project, note which modules were yours.)</li>
-    <li>(Anything you want to highlight — the persistence layer, the grading logic, the reporting.)</li>
+    <li><strong>Login and authentication.</strong> Built the login page and the authentication service behind it, checking credentials against the user file for the selected role and reporting invalid identifiers and failed logins separately.</li>
+    <li><strong>Role-aware identifier validation.</strong> Implemented per-role user ID formats — administrators, academic leaders, lecturers and students each follow a distinct pattern — so a malformed identifier is caught and explained before authentication is attempted.</li>
+    <li><strong>The academic leader system.</strong> Built the dashboard that separates modules into assigned and unassigned, along with module creation and the lecturer assignment flow that closes that gap.</li>
+    <li><strong>Academic leader reporting and profile.</strong> Added the reporting view and profile management reached from that dashboard.</li>
+    <li><strong>Announcements.</strong> Implemented the announcement dialog and the repository behind it, with announcements filtered by target role so each audience sees only what applies to them.</li>
+    <li>Contributed to the shared text-file persistence approach used across the application, with records split into separate files per entity.</li>
   </ul>
 </section>
 
