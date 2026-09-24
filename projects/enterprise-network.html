@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Multi-Site Enterprise Network — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="A four-site enterprise network designed and configured in Cisco Packet Tracer, covering VLAN segmentation, VLSM addressing, OSPF routing, HSRP and EtherChannel redundancy, WLC-managed wireless and Layer 2 security.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>Multi-Site <span>Enterprise Network</span></h1>
+  <p class="project-tagline">
+    A four-site corporate network designed and configured end to end in Cisco
+    Packet Tracer — VLAN-segmented departments, a VLSM addressing plan, OSPF
+    routing, redundant gateways and aggregated links, controller-managed
+    wireless, and Layer 2 attack mitigation.
+  </p>
+
+  <ul class="tech-tags">
+    <li>Cisco Packet Tracer</li>
+    <li>VLANs</li>
+    <li>VLSM</li>
+    <li>OSPF</li>
+    <li>HSRP</li>
+    <li>EtherChannel</li>
+    <li>DHCPv4</li>
+    <li>WLC / WPA2</li>
+    <li>Port Security</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>Group coursework</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>Network Designer — topology, addressing and switching</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>December 2025 – January 2026</dd>
+    </div>
+    <div>
+      <dt>Module</dt>
+      <dd>Switching and Routing Essentials (CT133-3-2-SRE)</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    The brief was a network upgrade for a company operating across four sites —
+    a headquarters in Kuala Lumpur plus branches in Malacca, Johor Bahru and
+    Penang — each housing different departments with different needs. The task
+    was to design the logical topology from scratch and configure every device
+    in Cisco Packet Tracer as a working prototype.
+  </p>
+  <p>
+    The sites are not uniform, which is what makes the design interesting. The
+    headquarters and Malacca remain fully wired. Penang moves to controller-managed
+    wireless so its access points can be configured centrally rather than one by
+    one. Johor Bahru runs a mix of both and also hosts the server farm. Each
+    department — management, human resources, design, finance, research and
+    development, delivery, IT — becomes its own VLAN, so traffic is separated by
+    function rather than by whichever switch someone happens to be plugged into.
+  </p>
+  <p>
+    Because this is a prototype rather than a diagram, every requirement had to
+    actually work in simulation: addressing had to be consistent across sites,
+    routing had to converge, failover had to survive a link going down, and
+    connectivity had to be provable with ping and traceroute end to end.
+  </p>
+</section>
+
+<!-- features -->
+<section class="alt-bg">
+  <h2 class="section-title">Design <span>Highlights</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-network-chart'></i>
+      <h3>Four-site topology</h3>
+      <p>
+        Headquarters and three branches joined over WAN links to a routed core,
+        with distribution and access layers built out per site.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-sitemap'></i>
+      <h3>VLAN segmentation</h3>
+      <p>
+        Every department is its own broadcast domain, keeping traffic separated
+        by business function and limiting the blast radius of a Layer 2 problem.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-calculator'></i>
+      <h3>VLSM addressing plan</h3>
+      <p>
+        Subnets sized to each department rather than issued uniformly, with
+        public addressing on the WAN links and server farm and private ranges
+        inside each site.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-directions'></i>
+      <h3>OSPF and static routing</h3>
+      <p>
+        Dynamic routing between sites so the network converges on its own, with
+        a default static route handling traffic leaving the topology.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-git-merge'></i>
+      <h3>HSRP and EtherChannel</h3>
+      <p>
+        Redundant default gateways so a failed router does not isolate a VLAN,
+        and bundled physical links that add bandwidth while surviving the loss
+        of a member.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-wifi'></i>
+      <h3>Controller-managed wireless</h3>
+      <p>
+        A WLC serving wireless VLANs with DHCP and WPA2 authentication, so
+        access points are managed centrally instead of individually.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-shield-quarter'></i>
+      <h3>Layer 2 hardening</h3>
+      <p>
+        Port security and related mitigations applied against common Layer 2
+        attacks, alongside baseline hardening on every router and switch.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-server'></i>
+      <h3>Server farm services</h3>
+      <p>
+        DNS, FTP and web services hosted in the Johor Bahru server farm, with
+        DHCPv4 serving addresses across multiple LANs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- topology -->
+<section>
+  <h2 class="section-title">The <span>Topology</span></h2>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="../images/networking.png" width="1383" height="956" loading="lazy"
+           alt="Cisco Packet Tracer topology showing four colour-coded sites connected through a routed core, with redundant distribution switches, access switches, end devices, wireless access points and a server farm">
+      <figcaption>
+        <strong>Full logical topology in Cisco Packet Tracer.</strong> Each
+        coloured region is a site, and the blocks within them are departmental
+        VLANs. The routed core in the centre links the four sites, while the
+        paired distribution switches at each site carry the bundled EtherChannel
+        trunks and redundant gateways. The server farm sits with the Johor Bahru
+        network on the right.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- contribution -->
+<section class="alt-bg">
+  <h2 class="section-title">What I <span>Built</span></h2>
+  <p>
+    Built with a project team, with the technical areas divided between members.
+    The topology itself was mine, along with the addressing plan the rest of the
+    build depended on.
+  </p>
+  <ul class="role-list">
+    <li><strong>Designed the entire network topology</strong> across all four sites — device placement, the layered switching design, WAN interconnects and the redundant paths between them.</li>
+    <li><strong>Built the IPv4 and IPv6 addressing plan</strong> using VLSM, sizing each subnet to its department, applying public addressing to the WAN links and server farm and private ranges within each site. Every other configuration depended on this being right first.</li>
+    <li><strong>Deployed the baseline switch and router configurations</strong> across the devices in the topology.</li>
+    <li><strong>Implemented EtherChannel</strong> link aggregation between distribution switches, and worked on the HSRP gateway redundancy alongside a teammate.</li>
+    <li><strong>Contributed partially to the WLC wireless deployment</strong>, which was otherwise owned by teammates.</li>
+    <li><strong>Documented the addressing tables and the EtherChannel implementation</strong> in the group report, including the verification output evidencing the configuration.</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="assessment-feedback-system.html"><i class='bx bx-left-arrow-alt'></i> Previous: Assessment Feedback System</a>
+  <a href="../index.html#portfolio">All projects <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>

@@ -17,6 +17,7 @@ export default defineConfig({
         hypertextEdu: here('projects/hypertext-edu.html'),
         psychologySystem: here('projects/psychology-system.html'),
         assessmentFeedback: here('projects/assessment-feedback-system.html'),
+        enterpriseNetwork: here('projects/enterprise-network.html'),
       },
     },
   },
