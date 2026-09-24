@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -70,7 +68,9 @@ section {
 
 #menu-icon {
     font-size: 3.6rem;
-    color:  var(--text-color);
+    color: var(--text-color);
+    background: transparent;
+    cursor: pointer;
     display: none;
 }
 
@@ -225,16 +225,16 @@ span {
     transform: scale(1.02);
 }
 
-.services-box i {
+.service-box i {
     font-size: 7rem;
     color: var(--main-color);
 }
 
-.services-box h3 {
+.service-box h3 {
     font-size: 2.6rem;
 }
 
-.services-box p {
+.service-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
 }

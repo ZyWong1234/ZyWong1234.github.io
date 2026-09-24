@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "prettier": "^3.3.1",
-    "vite": "^5.1.6"
+    "prettier": "^3.9.9",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "boxicons": "^2.1.4",
+    "scrollreveal": "^4.0.9",
+    "typed.js": "^3.0.0"
   }
 }

@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
 
-  <!-- box icons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Wong Zhi Yoong — Portfolio</title>
+  <meta name="description"
+        content="Portfolio of Wong Zhi Yoong, a web and backend developer building educational web platforms.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- fonts: preconnected + non-blocking, instead of a CSS @import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Wong Zhi Yoong — Portfolio">
+  <meta property="og:description"
+        content="Portfolio of Wong Zhi Yoong, a web and backend developer building educational web platforms.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/me.png">
 
   <!-- custom css -->
   <link rel="stylesheet" href="style.css">
@@ -17,14 +31,16 @@
 
 <!-- header design -->
 <header class="header">
-  <a href="#" class="logo">Portfolio</a>
+  <a href="#home" class="logo">Portfolio</a>
 
-  <i class='bx bx-menu' id="menu-icon"></i>
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
 
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
-    <a href="#projects">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -37,65 +53,67 @@
     <h3>And I'm a <span class="multiple-text"></span></h3>
     <p>(Input some details)</p>
     <div class="social-media">
-      <a href="#"><i class='bx bxl-facebook' ></i></a>
-      <a href="#"><i class='bx bxl-instagram' ></i></a>
-      <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+      <!-- TODO: replace the "#" with your real profile URLs -->
+      <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+      <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+      <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
     </div>
-    <a href="#" class="btn">Downlaod CV</a>
+    <!-- TODO: point this at your actual CV file, e.g. /cv.pdf in public/ -->
+    <a href="#" class="btn">Download CV</a>
   </div>
 
   <div class="home-img">
-    <img src="images/me.png" alt="">
+    <img src="images/me.png" alt="Portrait of Wong Zhi Yoong" width="1030" height="1030">
   </div>
 </section>
 
 <!-- about section design -->
 <section class="about" id="about">
   <div class="about-img">
-    <img src="images/me.png" alt="">
+    <img src="images/me.png" alt="" width="1030" height="1030" loading="lazy">
   </div>
 
   <div class="about-content">
     <h2 class="heading">About <span>Me</span></h2>
     <h3>Web Developer</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque fugit illo in sunt tempore? <br>
-      Ab distinctio dolorum itaque magni mollitia, sequi! Aliquid consectetur debitis, error, <br>
-      est expedita illum ipsam, laborum maiores minus nemo neque quis reiciendis sit suscipit tempora tempore totam voluptatem. <br>
-      Ipsam labore necessitatibus perferendis?</p>
+    <!-- TODO: replace this placeholder with your own bio -->
+    <p>(Write two or three sentences about your degree, the kind of systems you
+      like building, and what you are looking for next.)</p>
     <a href="#" class="btn">Read More</a>
   </div>
 </section>
 
 <!-- Services section design -->
 <section class="services" id="services">
-  <h2 class="heading">Our <span>Services</span></h2>
+  <h2 class="heading">My <span>Services</span></h2>
 
   <div class="services-container">
-    <div class="services-box">
-      <i class='bx bx-code' ></i>
+    <div class="service-box">
+      <i class='bx bx-code'></i>
       <h3>Web Development</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Cum eaque, fuga? Adipisci autem consectetur eos laudantium nam, <br>sapiente sint sit.</p>
+      <!-- TODO: describe what you actually offer -->
+      <p>(Describe this service in a sentence or two.)</p>
       <a href="#" class="btn">Read More</a>
     </div>
 
-    <div class="services-box">
-      <i class='bx bx-code' ></i> <!--change to the icon related to the services-->
-      <h3>(Services)</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Cum eaque, fuga? Adipisci autem consectetur eos laudantium nam, <br>sapiente sint sit.</p>
+    <div class="service-box">
+      <i class='bx bx-server'></i>
+      <h3>(Service)</h3>
+      <p>(Describe this service in a sentence or two.)</p>
       <a href="#" class="btn">Read More</a>
     </div>
 
-    <div class="services-box">
-      <i class='bx bx-code' ></i> <!--change to the icon related to the services-->
-      <h3>(Services)</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Cum eaque, fuga? Adipisci autem consectetur eos laudantium nam, <br>sapiente sint sit.</p>
+    <div class="service-box">
+      <i class='bx bx-data'></i>
+      <h3>(Service)</h3>
+      <p>(Describe this service in a sentence or two.)</p>
       <a href="#" class="btn">Read More</a>
     </div>
 
-    <div class="services-box">
-      <i class='bx bx-code' ></i> <!--change to the icon related to the services-->
-      <h3>(Services)</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Cum eaque, fuga? Adipisci autem consectetur eos laudantium nam, <br>sapiente sint sit.</p>
+    <div class="service-box">
+      <i class='bx bx-palette'></i>
+      <h3>(Service)</h3>
+      <p>(Describe this service in a sentence or two.)</p>
       <a href="#" class="btn">Read More</a>
     </div>
   </div>
@@ -107,19 +125,26 @@
 
   <div class="portfolio-container">
     <div class="portfolio-box">
-      <img src="images/Quiz_Student.png" alt="">
+      <img src="images/Quiz_Student.png" alt="HyperText Edu quiz page as seen by a student"
+           width="1200" height="800" loading="lazy">
       <div class="portfolio-layer">
         <h4>Web Quiz Development</h4>
-        <p>HyperText Edu was developed to streamline instructor operations and enhance university students' understanding of HyperText Markup Language (HTML).
-          <a href="#"><i class='bx bx-link-external'></i></a>
+        <p>HyperText Edu was developed to streamline instructor operations and
+          enhance university students' understanding of HyperText Markup
+          Language (HTML).</p>
+        <!-- TODO: link to the repo or live demo -->
+        <a href="#" aria-label="Open HyperText Edu project"><i class='bx bx-link-external'></i></a>
       </div>
     </div>
+
     <div class="portfolio-box">
-      <img src="images/Quiz_Student.png" alt="">
+      <img src="images/Game_Student.png" alt="Learning game dashboard as seen by a student"
+           width="1232" height="693" loading="lazy">
       <div class="portfolio-layer">
-        <h4>Web Quiz Development</h4>
-        <p>HyperText Edu was developed to streamline instructor operations and enhance university students' understanding of HyperText Markup Language (HTML).
-          <a href="#"><i class='bx bx-link-external'></i></a>
+        <h4>(Project title)</h4>
+        <!-- TODO: replace with this project's real description -->
+        <p>(Describe the project, who it was for, and what you built.)</p>
+        <a href="#" aria-label="Open project"><i class='bx bx-link-external'></i></a>
       </div>
     </div>
 
@@ -130,17 +155,26 @@
 <section class="contact" id="contact">
   <h2 class="heading">Contact <span>Me!</span></h2>
 
-  <form action="#">
+  <!--
+    TODO: this form has no backend yet, so submissions go nowhere.
+    Pick a free form service and put its endpoint in the action below, e.g.
+      <form action="https://formspree.io/f/YOUR_ID" method="POST">
+  -->
+  <form action="#" method="POST">
     <div class="input-box">
-      <input type="text" placeholder="Full Name">
-      <input type="email" placeholder="Email Address">
+      <input type="text" name="name" placeholder="Full Name" aria-label="Full name"
+             autocomplete="name" required>
+      <input type="email" name="email" placeholder="Email Address" aria-label="Email address"
+             autocomplete="email" required>
     </div>
     <div class="input-box">
-      <input type="number" placeholder="Mobile Number">
-      <input type="text" placeholder="Subject">
+      <input type="tel" name="phone" placeholder="Mobile Number" aria-label="Mobile number"
+             autocomplete="tel">
+      <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
     </div>
     <div class="input-box">
-      <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message"
+                aria-label="Your message" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </div>
   </form>
@@ -149,22 +183,16 @@
 <!-- footer design -->
 <footer class="footer">
   <div class="footer-text">
-    <p>Copyright &copy; 2025 by ZY | All Rights Reserved.</p>
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
   </div>
 
   <div class="footer-iconTop">
-    <a href="#"><i class='bx bx-chevrons-up' ></i></a>
+    <a href="#home" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
   </div>
 </footer>
 
-<!-- Scroll reveal-->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<!-- typed js -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
 <!-- custom js -->
-<script src = "script.js"></script>
+<script type="module" src="/src/main.js"></script>
 
 </body>
 </html>
