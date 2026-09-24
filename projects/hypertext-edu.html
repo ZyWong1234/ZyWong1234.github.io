@@ -6,7 +6,7 @@
 
   <title>HyperText Edu — Wong Zhi Yoong</title>
   <meta name="description"
-        content="A web quiz platform for teaching HTML, built with HTML and CSS. Separate student, instructor and administrator experiences, with quiz-code joining, a moderation queue and a theme shop.">
+        content="A web quiz platform for teaching HTML, built on a PHP and MySQL stack. Separate student, instructor and administrator experiences, with quiz-code joining, a moderation queue and a theme shop.">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -52,9 +52,10 @@
   <ul class="tech-tags">
     <li>HTML</li>
     <li>CSS</li>
-    <li>Responsive layout</li>
-    <li>Role-based UI</li>
-    <!-- TODO: add JavaScript, PHP, MySQL or whatever else this project used -->
+    <li>PHP</li>
+    <li>MySQL</li>
+    <li>Apache (WampServer)</li>
+    <li>Role-based access</li>
   </ul>
 
   <dl class="project-meta">
@@ -102,6 +103,11 @@
     interface. It was a deliberate exercise in separating presentation from
     structure: the same markup drives every theme, with only the styling layer
     swapped underneath.
+  </p>
+  <p>
+    The platform runs on a PHP and MySQL stack served through Apache, with quiz
+    content, user accounts and review status all persisted in the database rather
+    than held in the page.
   </p>
 </section>
 
@@ -219,7 +225,8 @@
     <li>Built the content upload flow for adding material to the platform.</li>
     <li>Implemented the website review section used to audit published content.</li>
     <li>Structured and styled the administrator interface in HTML and CSS, consistent with the wider design language.</li>
-    <li>(Add anything else you owned here — and name the backend technology you used, so this reads as full-stack work.)</li>
+    <li>Designed the MySQL schema behind the administrator features and wrote the queries driving them.</li>
+    <li>(Add anything else you owned here — authentication, validation, or team coordination.)</li>
   </ul>
 </section>
 

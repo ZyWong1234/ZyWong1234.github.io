@@ -54,7 +54,7 @@
     <li>Swing GUI</li>
     <li>Object-oriented design</li>
     <li>Role-based access</li>
-    <!-- TODO: add how data was stored (text files, serialization, MySQL...) -->
+    <li>Text-file persistence</li>
   </ul>
 
   <dl class="project-meta">
@@ -102,6 +102,11 @@
     Feedback deliberately runs in both directions. Lecturers record notes a student
     can read afterwards, and students submit their own feedback on the consultation,
     so the record of each session is not one-sided.
+  </p>
+  <p>
+    The application runs without a database engine: all records persist to
+    structured text files, which meant designing a storage format and the
+    read, write and parse routines around it by hand.
   </p>
 </section>
 
@@ -210,6 +215,7 @@
     <li>Built the rescheduling workflow so change requests are resolved as a tracked action rather than ad-hoc messages.</li>
     <li>Implemented consultation feedback recording, producing the notes students read back on their own dashboard.</li>
     <li>Built the student feedback view so lecturers can read the feedback left against their sessions.</li>
+    <li>Designed the text-file storage format for the lecturer module, handling reading, writing and parsing records without a database engine.</li>
     <li>(Add anything else you owned here — data modelling, validation, reporting, or team coordination.)</li>
   </ul>
 </section>
