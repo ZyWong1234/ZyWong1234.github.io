@@ -19,6 +19,7 @@ export default defineConfig({
         assessmentFeedback: here('projects/assessment-feedback-system.html'),
         enterpriseNetwork: here('projects/enterprise-network.html'),
         eduSphere: here('projects/edusphere.html'),
+        ethicalHacking: here('projects/ethical-hacking.html'),
       },
     },
   },

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Brute-Force Authentication Assessment — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="An ethical hacking assessment testing web authentication against brute-force attacks in an isolated Kali Linux lab, following a full penetration-testing methodology from reconnaissance to unauthorised-access verification and mitigation.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Wong Zhi Yoong</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#portfolio" class="active">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>Brute-Force <span>Authentication Assessment</span></h1>
+  <p class="project-tagline">
+    An ethical hacking exercise testing how well a web login stands up to a
+    brute-force attack — carried out end to end in an isolated Kali Linux lab,
+    following the same methodology a real penetration tester would use, and
+    closing with the controls that would have stopped it.
+  </p>
+
+  <ul class="tech-tags">
+    <li>Kali Linux</li>
+    <li>Hydra</li>
+    <li>Burp Suite</li>
+    <li>Nmap</li>
+    <li>DVWA</li>
+    <li>VMware</li>
+    <li>Penetration Testing</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>Coursework — ethical hacking</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>Penetration Tester</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>(Month Year – Month Year)</dd>
+    </div>
+    <div>
+      <dt>Environment</dt>
+      <dd>Isolated host-only lab (VMware)</dd>
+    </div>
+  </dl>
+
+  <p style="font-size:1.45rem;color:rgba(255,255,255,.55);max-width:75rem;margin-top:.5rem">
+    <i class='bx bx-info-circle'></i>
+    Conducted entirely against a deliberately vulnerable target (DVWA) on a
+    private, disconnected network. No real systems were involved.
+  </p>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    Authentication is usually the first line of defence between an attacker and an
+    organisation's data — and it is also one of the most commonly broken. Weak or
+    reused passwords, no account lockout and no multi-factor authentication turn a
+    login form into an open door. The 2021 Colonial Pipeline breach, which began
+    with a single compromised VPN credential on an account without MFA, is the
+    textbook example of how far a weak credential can reach.
+  </p>
+  <p>
+    This assessment reproduces that class of weakness safely. Framed around a
+    fictional logistics company and its employee portal, it asks a simple question:
+    if the passwords are weak and the usual protections are missing, how quickly
+    can an attacker get in? To answer it, I built a two-machine lab — Kali Linux as
+    the attacker, a deliberately vulnerable web application (DVWA) as the target —
+    on an isolated host-only network, and worked through a full penetration-testing
+    methodology against it.
+  </p>
+  <p>
+    The point was not just to break in, but to produce the evidence that justifies
+    fixing it: which weaknesses combined to make the attack possible, and which
+    specific controls would have stopped it.
+  </p>
+</section>
+
+<!-- methodology -->
+<section class="alt-bg">
+  <h2 class="section-title">The <span>Methodology</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-search-alt'></i>
+      <h3>1 · Reconnaissance</h3>
+      <p>
+        Located the target on the isolated network with <code>netdiscover</code>,
+        confirming connectivity between the attacker and victim machines before
+        anything else.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-radar'></i>
+      <h3>2 · Network scanning</h3>
+      <p>
+        Enumerated open ports and services with <code>nmap -sV</code>, identifying
+        the HTTP service hosting the application and its version.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-globe'></i>
+      <h3>3 · Web enumeration</h3>
+      <p>
+        Examined the login page in the browser to map the authentication interface
+        — the username field, password field and login action.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-crosshair'></i>
+      <h3>4 · Request analysis</h3>
+      <p>
+        Intercepted a failed login with Burp Suite to capture the request method,
+        the login URL, the exact parameters, and the failure message — everything
+        Hydra needs to be configured correctly.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-terminal'></i>
+      <h3>5 · Brute-force attack</h3>
+      <p>
+        Ran Hydra as an <code>http-post-form</code> attack with a known username
+        and a password wordlist. It found valid credentials within seconds.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-lock-open-alt'></i>
+      <h3>6 · Access verification</h3>
+      <p>
+        Logged in manually with the recovered credentials to confirm the finding
+        and reach the portal dashboard — proving the impact rather than assuming it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- cover -->
+<section>
+  <div class="shots">
+    <figure class="shot" style="background:none;box-shadow:none">
+      <img src="../images/ethical-hacking.svg" width="1232" height="770" loading="lazy"
+           alt="Terminal showing a Hydra http-post-form brute-force command finding a valid admin password">
+      <figcaption style="text-align:center">
+        The Hydra attack at the centre of the assessment — a dictionary attack
+        against the login form, returning a valid credential.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- findings -->
+<section class="alt-bg">
+  <h2 class="section-title">What Made It <span>Possible</span></h2>
+  <p>
+    No single flaw made the attack work — it was the combination. Each weakness on
+    its own raises risk; together they leave a login with almost nothing standing
+    between an automated tool and a valid account.
+  </p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-key'></i>
+      <h3>Weak passwords</h3>
+      <p>
+        The valid password sat in a small wordlist, so it fell almost immediately.
+        Strong, complex passwords would have made the attack impractical.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-error-circle'></i>
+      <h3>No account lockout</h3>
+      <p>
+        Repeated failed attempts were accepted without ever locking the account,
+        letting the tool keep guessing indefinitely.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-time-five'></i>
+      <h3>No rate limiting</h3>
+      <p>
+        Login requests were processed with no throttling, so Hydra could test
+        passwords as fast as the server would answer.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-broadcast'></i>
+      <h3>No multi-factor auth</h3>
+      <p>
+        A username and password were the only barrier, so a single recovered
+        credential was enough for full access.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- countermeasures -->
+<section>
+  <h2 class="section-title">The <span>Fixes</span></h2>
+  <p>
+    Effective authentication security is layered — no one control is enough, but
+    together they close off the attack demonstrated here.
+  </p>
+  <ul class="role-list">
+    <li><strong>Strong password policy.</strong> Enforce length and complexity and block common passwords, so a wordlist attack has nothing to catch.</li>
+    <li><strong>Multi-factor authentication.</strong> The single most effective control — a recovered password alone is no longer enough to log in.</li>
+    <li><strong>Account lockout.</strong> Temporarily disable an account after several failed attempts, breaking the automated loop.</li>
+    <li><strong>Login rate limiting and CAPTCHA.</strong> Throttle repeated attempts and separate humans from tools after a few failures.</li>
+    <li><strong>Monitoring and alerting.</strong> Feed failed-login patterns into a SIEM so a brute-force attempt is spotted while it is happening.</li>
+    <li><strong>Security awareness.</strong> Train users on strong, unique passwords — the human factor behind most credential compromise.</li>
+  </ul>
+</section>
+
+<!-- what I did -->
+<section class="alt-bg">
+  <h2 class="section-title">What I <span>Did</span></h2>
+  <ul class="role-list">
+    <li>Designed and built the isolated two-machine lab in VMware on a host-only network, so the exercise stayed safe and self-contained.</li>
+    <li>Worked through the full methodology solo — reconnaissance, scanning, enumeration, request analysis, the Hydra attack and access verification.</li>
+    <li>Used Burp Suite to reverse-engineer the login request so the Hydra attack could be configured precisely against the real parameters and failure response.</li>
+    <li>Analysed the results into a combined-weakness assessment and a layered set of countermeasures mapped to each finding.</li>
+    <li>Documented the whole assessment as a formal penetration-testing report.</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="edusphere.html"><i class='bx bx-left-arrow-alt'></i> Previous: EduSphere</a>
+  <a href="../index.html#portfolio">All projects <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>
