@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>APU Psychology Consultation System — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="A Java desktop application for booking and managing university psychology consultations, with separate student and lecturer workflows covering scheduling, rescheduling and two-way feedback.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>APU Psychology <span>Consultation System</span></h1>
+  <p class="project-tagline">
+    A Java desktop application that manages the full lifecycle of university
+    psychology consultations — from a lecturer opening availability through to
+    the feedback both sides leave once the session is done.
+  </p>
+
+  <ul class="tech-tags">
+    <li>Java</li>
+    <li>Swing GUI</li>
+    <li>Object-oriented design</li>
+    <li>File-based persistence</li>
+    <li>Role-based access</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>(Coursework / group assignment)</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>(Your role, e.g. application developer)</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>(Month Year – Month Year)</dd>
+    </div>
+    <div>
+      <dt>Platform</dt>
+      <dd>Windows desktop</dd>
+    </div>
+  </dl>
+
+  <!-- TODO: point this at the real repository, then delete this note -->
+  <a href="#" class="btn">View Source Code</a>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    University counselling and academic consultation is usually coordinated over
+    email, which scatters availability, booking requests and rescheduling across
+    an inbox and leaves neither side with a reliable record. This system replaces
+    that with a single desktop application where scheduling is explicit and
+    every appointment has a traceable state.
+  </p>
+  <p>
+    Access is split by role and established at login. A student signs in against a
+    student identifier and sees only what is relevant to them: their upcoming
+    appointments, a path to request a new consultation, and the feedback their
+    lecturer has left. A lecturer signs in against a staff identifier and instead
+    manages the supply side — opening consultation slots, reviewing upcoming and
+    past appointments, and handling rescheduling requests.
+  </p>
+  <p>
+    Feedback deliberately runs in both directions. Lecturers record notes a student
+    can read afterwards, and students submit their own feedback on the consultation,
+    so the record of each session is not one-sided.
+  </p>
+</section>
+
+<!-- features -->
+<section class="alt-bg">
+  <h2 class="section-title">Key <span>Features</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-key'></i>
+      <h3>Role-based access</h3>
+      <p>
+        Login resolves to a student or lecturer identity, and the interface
+        presented is scoped to that role's permitted actions.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-calendar-check'></i>
+      <h3>Consultation slot management</h3>
+      <p>
+        Lecturers publish the windows they are available for, which become the
+        pool students can book against.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-conversation'></i>
+      <h3>Booking requests</h3>
+      <p>
+        Students request a consultation against published availability and track
+        its status from their own dashboard.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-timer'></i>
+      <h3>Rescheduling workflow</h3>
+      <p>
+        Change requests are handled as a first-class flow rather than ad-hoc
+        messages, so a moved appointment stays recorded.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-user-voice'></i>
+      <h3>Two-way feedback</h3>
+      <p>
+        Lecturers leave consultation notes students can read, and students submit
+        feedback of their own on the session.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-list-check'></i>
+      <h3>Appointment history</h3>
+      <p>
+        Both roles can review upcoming and past appointments, giving each side a
+        durable record instead of a scattered email trail.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- screenshots -->
+<section>
+  <h2 class="section-title">Student &amp; <span>Lecturer Views</span></h2>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="../images/PsychologySys_Student.png" width="624" height="375" loading="lazy"
+           alt="Student dashboard with buttons for upcoming appointments, consultation feedback, making a consultation and viewing lecturer feedback">
+      <figcaption>
+        <strong>Student dashboard.</strong> Signed in as a student account, the
+        interface narrows to four actions — check upcoming appointments, leave
+        consultation feedback, request a new consultation, and read the feedback
+        a lecturer has left.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/PsychologySys_Lecture.png" width="624" height="372" loading="lazy"
+           alt="Lecturer dashboard with controls for consultation slots, appointments, rescheduling, consultation and student feedback">
+      <figcaption>
+        <strong>Lecturer dashboard.</strong> The staff account manages the supply
+        side: publishing consultation slots, reviewing upcoming and past
+        appointments, resolving rescheduling requests, and recording feedback.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- contribution -->
+<section class="alt-bg">
+  <h2 class="section-title">What I <span>Built</span></h2>
+  <ul class="role-list">
+    <li>Modelled the domain in Java — users, consultation slots, appointments and feedback — as a set of collaborating classes.</li>
+    <li>Built the Swing interfaces for both the student and lecturer dashboards.</li>
+    <li>Implemented role-based routing so login determines which dashboard and permissions a user receives.</li>
+    <li>Developed the booking and rescheduling logic that keeps appointment state consistent between both parties.</li>
+    <li>Implemented the two-way feedback flow linking each record back to its consultation.</li>
+    <li>(Add anything else you owned here — persistence, validation, reporting, or team coordination.)</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="hypertext-edu.html"><i class='bx bx-left-arrow-alt'></i> Previous: HyperText Edu</a>
+  <a href="../index.html#portfolio">All projects <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>

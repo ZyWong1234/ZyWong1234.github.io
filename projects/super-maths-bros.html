@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Super M4ths Bros: Escape the Detention — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="A top-down educational game built in Python with Pygame, where students solve calculus problems to escape detention. Includes lecturer content tools and a student analytics dashboard.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>Super M4ths Bros: <span>Escape the Detention</span></h1>
+  <p class="project-tagline">
+    A top-down educational game that turns calculus revision into a timed escape
+    challenge — built in Python with Pygame, and backed by authoring tools and an
+    analytics dashboard for teaching staff.
+  </p>
+
+  <ul class="tech-tags">
+    <li>Python</li>
+    <li>Pygame</li>
+    <li>Matplotlib</li>
+    <li>Tiled map design</li>
+    <li>Pixel art</li>
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>(Coursework / personal project)</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>(Your role, e.g. gameplay &amp; systems developer)</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>(Month Year – Month Year)</dd>
+    </div>
+    <div>
+      <dt>Platform</dt>
+      <dd>Windows desktop</dd>
+    </div>
+  </dl>
+
+  <!-- TODO: point these at the real repository / download, then delete this note -->
+  <a href="#" class="btn">View Source Code</a>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    Students revising calculus tend to drill past papers in isolation, which makes
+    it hard to stay engaged and harder still for lecturers to see who is actually
+    struggling. Super M4ths Bros reframes that revision as a game: the player is
+    stuck in detention, and the only way out is to work through the mathematics.
+  </p>
+  <p>
+    The player explores a pixel-art school from a top-down view, approaching
+    non-player characters to trigger a question prompt. Each level is timed and
+    tied to a specific topic — level LVL001 covers differentiation, for example —
+    so progress through the building maps directly onto progress through the
+    syllabus.
+  </p>
+  <p>
+    What makes the project more than a single game loop is that it ships with the
+    tooling around it. Lecturers get an in-game console for writing the questions,
+    and a separate analytics view reports how the cohort is actually performing,
+    so the content can be maintained without touching the source code.
+  </p>
+</section>
+
+<!-- features -->
+<section class="alt-bg">
+  <h2 class="section-title">Key <span>Features</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-joystick'></i>
+      <h3>Explorable school map</h3>
+      <p>
+        A tile-based campus — classrooms, corridors, lockers and a cafeteria —
+        navigated in a top-down view with collision handling against the scenery.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-message-square-dots'></i>
+      <h3>NPC question prompts</h3>
+      <p>
+        Walking up to a character shows an [E] interaction cue. Engaging opens a
+        modal with the question, a free-text answer field, and keyboard controls
+        to submit or dismiss.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-timer'></i>
+      <h3>Timed levels</h3>
+      <p>
+        Each chapter runs against a countdown displayed on the HUD, adding
+        pressure that rewards fluency rather than slow trial and error.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-edit'></i>
+      <h3>Lecturer content management</h3>
+      <p>
+        An in-game console to create, edit and delete quizzes and revise the
+        accompanying notes, so question banks stay editable by teaching staff.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-bar-chart-alt-2'></i>
+      <h3>Student analytics</h3>
+      <p>
+        Progress and attempt distributions are rendered as charts per level,
+        alongside player overview, progress tracking and performance reports.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-palette'></i>
+      <h3>Theme shop &amp; rewards</h3>
+      <p>
+        A reward system lets players spend what they earn through correct answers
+        on cosmetic themes, giving a reason to keep returning.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- screenshots -->
+<section>
+  <h2 class="section-title">Inside the <span>Game</span></h2>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="../images/Game_Student.png" width="1232" height="693" loading="lazy"
+           alt="Top-down pixel-art school with a question prompt asking for the derivative of y equals x to the power one half">
+      <figcaption>
+        <strong>Student gameplay.</strong> The player has approached an NPC and
+        triggered a differentiation question. The HUD tracks the level, player ID
+        and remaining time, while the prompt accepts a typed answer with
+        [Enter] to submit and [Tab] to close.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/Game_Lecturer.png" width="1297" height="693" loading="lazy"
+           alt="Lecturer content management overlay with buttons to create, edit and delete quizzes">
+      <figcaption>
+        <strong>Lecturer content management.</strong> Teaching staff create, edit
+        and delete quizzes and maintain the supporting notes from inside the game,
+        so the question bank never requires a code change.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/Game_Admin.png" width="1297" height="693" loading="lazy"
+           alt="Level analytics dashboard showing progress distribution and attempts distribution bar charts">
+      <figcaption>
+        <strong>Student analytics.</strong> Per-level reporting built with
+        Matplotlib, showing how player progress and attempt counts are distributed
+        across the cohort — here for LVL001, the differentiation level.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- contribution -->
+<section class="alt-bg">
+  <h2 class="section-title">What I <span>Built</span></h2>
+  <ul class="role-list">
+    <li>Implemented the Pygame render and input loop, including tile-based map rendering and collision against the environment.</li>
+    <li>Designed the NPC interaction system that pauses play, presents a question modal and validates the typed answer.</li>
+    <li>Built the level and timer logic that ties each chapter to a syllabus topic.</li>
+    <li>Created the lecturer-facing content management screens for quiz and notes CRUD.</li>
+    <li>Produced the analytics views, generating progress and attempt distribution charts with Matplotlib.</li>
+    <li>(Add anything else you owned here — persistence, the reward economy, art, or team coordination.)</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="../index.html#portfolio"><i class='bx bx-left-arrow-alt'></i> All projects</a>
+  <a href="hypertext-edu.html">Next: HyperText Edu <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HyperText Edu — Wong Zhi Yoong</title>
+  <meta name="description"
+        content="A web quiz platform for teaching HTML, built with HTML and CSS. Separate student, instructor and administrator experiences, with quiz-code joining, a moderation queue and a theme shop.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body class="project-page">
+
+<header class="header">
+  <a href="../index.html#home" class="logo">Portfolio</a>
+
+  <button id="menu-icon" class="bx bx-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="navbar"></button>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html#home">Home</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#portfolio" class="active">Portfolio</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="project-hero">
+  <a href="../index.html#portfolio" class="breadcrumb">
+    <i class='bx bx-left-arrow-alt'></i> Back to projects
+  </a>
+
+  <h1>HyperText <span>Edu</span></h1>
+  <p class="project-tagline">
+    A web quiz platform for teaching HTML, designed around three distinct
+    audiences — students joining by quiz code, instructors authoring the
+    material, and administrators moderating what goes live.
+  </p>
+
+  <ul class="tech-tags">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Responsive layout</li>
+    <li>Role-based UI</li>
+    <!-- TODO: add JavaScript, PHP, MySQL or whatever else this project used -->
+  </ul>
+
+  <dl class="project-meta">
+    <div>
+      <dt>Project type</dt>
+      <dd>(Coursework / group project)</dd>
+    </div>
+    <div>
+      <dt>My role</dt>
+      <dd>(Your role, e.g. front-end developer)</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>(Month Year – Month Year)</dd>
+    </div>
+    <div>
+      <dt>Platform</dt>
+      <dd>Web browser</dd>
+    </div>
+  </dl>
+
+  <!-- TODO: point these at the real repository / live demo, then delete this note -->
+  <a href="#" class="btn">View Source Code</a>
+</section>
+
+<!-- overview -->
+<section>
+  <h2 class="section-title">Project <span>Overview</span></h2>
+  <p>
+    HyperText Edu was built to streamline instructor operations and strengthen
+    university students' understanding of HyperText Markup Language. Teaching HTML
+    presents a particular problem: the subject is best learned by doing, but
+    assessing a large cohort quickly becomes an administrative burden.
+  </p>
+  <p>
+    The platform separates that workload across three roles. Students join a quiz
+    with a short code — no account hunting, no shared links — and see announcements
+    and guidance on the same landing page. Instructors work in a dedicated console
+    where each quiz can be created, described and revised independently.
+    Administrators sit above both, holding a review queue that gates what students
+    ultimately see.
+  </p>
+  <p>
+    Alongside the teaching flow, a theme shop lets users reskin the entire
+    interface. It was a deliberate exercise in separating presentation from
+    structure: the same markup drives every theme, with only the styling layer
+    swapped underneath.
+  </p>
+</section>
+
+<!-- features -->
+<section class="alt-bg">
+  <h2 class="section-title">Key <span>Features</span></h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class='bx bx-key'></i>
+      <h3>Join by quiz code</h3>
+      <p>
+        Students enter a short code on the landing page to reach a quiz directly,
+        removing the friction of navigating a course hierarchy.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-conversation'></i>
+      <h3>Announcements feed</h3>
+      <p>
+        A dated, attributed announcement stream on the student homepage carries
+        platform updates and study guidance.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-list-check'></i>
+      <h3>Instructor quiz management</h3>
+      <p>
+        A dedicated console listing every quiz with its description and creation
+        date, each editable in place, plus a quick-add control for new material.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-check-shield'></i>
+      <h3>Administrator review queue</h3>
+      <p>
+        Submitted quizzes carry a status and await approval, giving administrators
+        editorial control over what reaches students.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-paint'></i>
+      <h3>Theme shop</h3>
+      <p>
+        Users restyle the whole interface from a catalogue of themes — the same
+        structure rendered through a different visual identity.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-search'></i>
+      <h3>Search &amp; account management</h3>
+      <p>
+        Site-wide search for finding quizzes quickly, with account administration
+        and content upload handled from the admin navigation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- screenshots -->
+<section>
+  <h2 class="section-title">Three <span>Perspectives</span></h2>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="../images/Quiz_Student.png" width="1200" height="800" loading="lazy"
+           alt="HyperText Edu student homepage with a quiz code entry field and an announcements feed">
+      <figcaption>
+        <strong>Student view.</strong> The quiz code field sits at the top of the
+        landing page, with the announcements feed below carrying dated, attributed
+        posts and platform guidance.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/Quiz_Instructor.png" width="2496" height="1421" loading="lazy"
+           alt="Instructor quiz list with edit buttons, shown under an alternative purchased theme">
+      <figcaption>
+        <strong>Instructor view.</strong> Every quiz is listed with its description
+        and creation date, each editable in place. This screenshot also shows the
+        theme shop at work — the same interface under a different purchased theme.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/Quiz_Admin.png" width="2489" height="1401" loading="lazy"
+           alt="Administrator homepage listing published quizzes with pending status and view controls">
+      <figcaption>
+        <strong>Administrator view.</strong> Published quizzes are listed with
+        their review status, alongside navigation for website review, account
+        management and content upload.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- contribution -->
+<section class="alt-bg">
+  <h2 class="section-title">What I <span>Built</span></h2>
+  <ul class="role-list">
+    <li>Structured the semantic HTML across the student, instructor and administrator interfaces.</li>
+    <li>Wrote the CSS design system — layout, card components, navigation and form styling — shared across all three roles.</li>
+    <li>Implemented the themeable styling layer so a single set of markup renders under multiple visual identities.</li>
+    <li>Built the quiz-code entry flow and the announcement and quiz listing components.</li>
+    <li>Designed the responsive behaviour so the platform remains usable on smaller screens.</li>
+    <li>(Add anything else you owned here — interactivity, data handling, or team coordination.)</li>
+  </ul>
+</section>
+
+<!-- prev / next -->
+<section class="project-nav">
+  <a href="super-maths-bros.html"><i class='bx bx-left-arrow-alt'></i> Previous: Super M4ths Bros</a>
+  <a href="psychology-system.html">Next: APU Psychology System <i class='bx bx-right-arrow-alt'></i></a>
+</section>
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Copyright &copy; 2026 by ZY | All Rights Reserved.</p>
+  </div>
+  <div class="footer-iconTop">
+    <a href="#" aria-label="Back to top"><i class='bx bx-chevrons-up'></i></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/project.js"></script>
+
+</body>
+</html>

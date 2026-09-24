@@ -269,6 +269,18 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    color: var(--text-color);
+}
+
+/* Keyboard users need to see which card is focused. */
+.portfolio-container .portfolio-box:focus-visible {
+    outline: .3rem solid var(--main-color);
+    outline-offset: .4rem;
+}
+
+/* The whole card is the link now, so reveal the layer on focus too. */
+.portfolio-box:focus-visible .portfolio-layer {
+    transform: translateY(0);
 }
 
 .portfolio-box img {
@@ -314,19 +326,27 @@ span {
     margin: .3rem 0 1rem;
 }
 
-.portfolio-layer a {
+.portfolio-cta {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 5rem;
+    gap: .6rem;
+    margin-top: .8rem;
+    padding: .9rem 2rem;
     background: var(--text-color);
-    border-radius: 50%;
+    color: var(--second-bg-color);
+    border-radius: 4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: gap .3s ease;
 }
 
-.portfolio-layer a i {
-    font-size: 2rem;
-    color: var(--second-bg-color);
+.portfolio-box:hover .portfolio-cta,
+.portfolio-box:focus-visible .portfolio-cta {
+    gap: 1.2rem;
+}
+
+.portfolio-cta i {
+    font-size: 1.8rem;
 }
 
 .contact h2 {
