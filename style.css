@@ -14,6 +14,7 @@
     --second-bg-color: #2b2342;
     --text-color: #fff;
     --main-color: #a855f7;
+    --accent-light: #d8b4fe;
 }
 
 html {
@@ -436,7 +437,7 @@ span {
     padding: .6rem 1.4rem;
     border: .15rem solid var(--main-color);
     border-radius: 4rem;
-    color: var(--main-color);
+    color: var(--accent-light);
     transition: .3s ease;
 }
 
