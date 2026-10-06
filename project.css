@@ -282,7 +282,7 @@
 .project-page code {
     padding: .2rem .7rem;
     border-radius: .5rem;
-    background: rgba(0, 238, 255, .12);
+    background: rgba(168, 85, 247, .15);
     color: var(--main-color);
     font-family: 'Courier New', monospace;
     font-size: .92em;
@@ -325,7 +325,7 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     background: linear-gradient(140deg, var(--second-bg-color), var(--bg-color));
-    border: .2rem solid rgba(0, 238, 255, .25);
+    border: .2rem solid rgba(168, 85, 247, .3);
     border-radius: 1.6rem;
     cursor: pointer;
     color: var(--text-color);

@@ -10,10 +10,10 @@
 }
 
 :root {
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
+    --bg-color: #1a1426;
+    --second-bg-color: #2b2342;
     --text-color: #fff;
-    --main-color: #0ef;
+    --main-color: #a855f7;
 }
 
 html {
@@ -441,7 +441,7 @@ span {
 }
 
 .skill-box:hover .skill-tags li {
-    background: rgba(0, 238, 255, .08);
+    background: rgba(168, 85, 247, .12);
 }
 
 .portfolio {
@@ -465,7 +465,7 @@ span {
 .portfolio-container .portfolio-box.featured {
     grid-column: 1 / -1;
     border: .25rem solid var(--main-color);
-    box-shadow: 0 0 2.5rem rgba(0, 238, 255, .25);
+    box-shadow: 0 0 2.5rem rgba(168, 85, 247, .3);
 }
 
 .portfolio-box.featured img {
@@ -475,7 +475,7 @@ span {
 /* Featured card stays readable without needing a hover. */
 .portfolio-box.featured .portfolio-layer {
     transform: translateY(0);
-    background: linear-gradient(rgba(31, 36, 45, .25), rgba(31, 36, 45, .96) 55%);
+    background: linear-gradient(rgba(26, 20, 38, .25), rgba(26, 20, 38, .96) 55%);
     justify-content: flex-end;
     padding-bottom: 3rem;
 }

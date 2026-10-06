@@ -10,7 +10,7 @@
 
   <!-- terminal window -->
   <rect x="146" y="140" width="940" height="490" rx="16" fill="#0d1117"
-        stroke="#00eeff" stroke-opacity="0.25" stroke-width="2"/>
+        stroke="#a855f7" stroke-opacity="0.25" stroke-width="2"/>
   <!-- title bar -->
   <rect x="146" y="140" width="940" height="46" rx="16" fill="#161b22"/>
   <rect x="146" y="170" width="940" height="16" fill="#161b22"/>
@@ -22,15 +22,15 @@
 
   <!-- terminal body -->
   <g font-family="Consolas, Menlo, monospace" font-size="20">
-    <text x="180" y="240" fill="#00eeff">┌──(kali㉿wongzhiyoong)-[~]</text>
-    <text x="180" y="270" fill="#00eeff">└─$ <tspan fill="#e6edf3">hydra -l admin -P passwords.txt \</tspan></text>
+    <text x="180" y="240" fill="#a855f7">┌──(kali㉿wongzhiyoong)-[~]</text>
+    <text x="180" y="270" fill="#a855f7">└─$ <tspan fill="#e6edf3">hydra -l admin -P passwords.txt \</tspan></text>
     <text x="180" y="300" fill="#e6edf3">     192.168.103.129 http-post-form</text>
     <text x="180" y="348" fill="#8b949e">[DATA] attacking http-post-form://192.168.103.129</text>
     <text x="180" y="378" fill="#8b949e">[DATA] max 16 tasks per 1 server ...</text>
     <text x="180" y="426" fill="#27c93f">[80][http-post-form] host: 192.168.103.129</text>
     <text x="212" y="452" fill="#27c93f">login: admin   password: ********</text>
     <text x="180" y="500" fill="#e6edf3">1 valid password found.</text>
-    <text x="180" y="548" fill="#00eeff">└─$ <tspan fill="#e6edf3">_</tspan></text>
+    <text x="180" y="548" fill="#a855f7">└─$ <tspan fill="#e6edf3">_</tspan></text>
   </g>
 
   <text x="146" y="695" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif"
