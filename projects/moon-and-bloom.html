@@ -62,6 +62,8 @@
     <li>Cloudflare R2</li>
     <li>Drizzle ORM</li>
     <li>better-auth</li>
+    <li>Resend</li>
+    <li>Cloudflare Turnstile</li>
   </ul>
 
   <dl class="project-meta">
@@ -75,7 +77,7 @@
     </div>
     <div>
       <dt>Timeline</dt>
-      <dd>September 2026</dd>
+      <dd>September 2026 – Present</dd>
     </div>
     <div>
       <dt>Status</dt>
@@ -172,6 +174,25 @@
         main triggers a build and deploy automatically.
       </p>
     </div>
+
+    <div class="feature-card">
+      <i class='bx bx-bell'></i>
+      <h3>Instant enquiry alerts</h3>
+      <p>
+        The florist is emailed the moment an enquiry arrives, with the customer
+        set as the reply-to address so a response goes straight back to them.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <i class='bx bx-bot'></i>
+      <h3>Spam-proof forms</h3>
+      <p>
+        Public forms are shielded by Cloudflare Turnstile alongside a honeypot and
+        rate limiting, and a dedicated privacy notice sets out how enquiry data is
+        handled.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -208,7 +229,7 @@
     <li><strong>Migrations are not automatic.</strong> A generated SQLite migration can rebuild a whole table, which is not something that should fire on every push, so schema changes are applied deliberately and before the code depending on them ships.</li>
     <li><strong>Authorization lives in one place.</strong> Route guards run in server hooks with the rules in a single authz module, so access is decided once rather than re-implemented per page.</li>
     <li><strong>Secrets are stored as Worker secrets</strong>, not dashboard variables — a plain variable added in the dashboard is dropped by the next deploy, since a deploy uploads a complete set of bindings from config.</li>
-    <li><strong>The enquiry forms carry a honeypot field</strong> and are rate limited, with authentication events recorded, keeping spam and brute-force attempts off a site with no captcha.</li>
+    <li><strong>Form abuse is handled in layers</strong> — Cloudflare Turnstile, a honeypot field and rate limiting together, with authentication events recorded — so genuine enquiries get through while automated spam and brute-force attempts do not.</li>
   </ul>
 </section>
 
@@ -227,6 +248,8 @@
     <li>Set up authentication with better-auth, including role-based guards, a one-time bootstrap route for the first account, and superadmin-managed accounts thereafter.</li>
     <li>Built image upload and delivery through Cloudflare R2, served via a dedicated route.</li>
     <li>Implemented the SEO layer: per-page metadata, JSON-LD structured data, and a sitemap generated from live availability.</li>
+    <li>Added email notifications through Resend so the shop is alerted to each enquiry, with the customer as the reply-to so replies reach them directly.</li>
+    <li>Layered bot protection onto the public forms with Cloudflare Turnstile, and wrote a privacy notice covering how enquiry data is used.</li>
     <li>Configured deployment on Cloudflare Workers with D1 and R2 bindings, and continuous deployment from GitHub.</li>
   </ul>
 </section>
