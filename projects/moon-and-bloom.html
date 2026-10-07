@@ -104,14 +104,13 @@
     So the site is two applications sharing one codebase. The public half is a
     fast, SEO-focused marketing site — collection pages, individual flower and
     balloon pages, an about page and an enquiry form. The private half is an admin
-    backoffice at <code>/admin</code> where the florist manages flowers, photographs,
+    backoffice where the florist manages flowers, photographs,
     categories, shop details and incoming enquiries.
   </p>
   <p>
     Payments were deliberately left out of scope. Rather than bolt on a checkout
-    the shop was not ready to operate, the database schema keeps the seams open —
-    <code>price_cents</code> and <code>stripe_price_id</code> already exist — so a
-    checkout can be added later without a rewrite. Scoping that decision explicitly
+    the shop was not ready to operate, the database schema was designed to leave room for a future checkout, so
+    payments can be added later without a rewrite. Scoping that decision explicitly
     kept the first release small enough to actually ship.
   </p>
 </section>
@@ -152,8 +151,8 @@
       <i class='bx bx-shield-quarter'></i>
       <h3>Role-based staff accounts</h3>
       <p>
-        Superadmin and admin roles with no public sign-up. Every admin route is
-        guarded server-side, so a new admin page is private by default.
+        Two staff roles with no public sign-up, and least-privilege access
+        enforced on the server so each role only reaches what it should.
       </p>
     </div>
 
@@ -188,9 +187,9 @@
       <i class='bx bx-bot'></i>
       <h3>Spam-proof forms</h3>
       <p>
-        Public forms are shielded by Cloudflare Turnstile alongside a honeypot and
-        rate limiting, and a dedicated privacy notice sets out how enquiry data is
-        handled.
+        Public forms are shielded from spam and automated abuse with Cloudflare
+        Turnstile backed by server-side checks, and a dedicated privacy notice
+        sets out how enquiry data is handled.
       </p>
     </div>
   </div>
@@ -227,9 +226,9 @@
   <ul class="role-list">
     <li><strong>Deploys are a git push.</strong> Pushing to main triggers a Cloudflare Workers build. Deploying from a laptop was deliberately retired, because it uploads uncommitted working-directory changes and silently drifts the live site away from main.</li>
     <li><strong>Migrations are not automatic.</strong> A generated SQLite migration can rebuild a whole table, which is not something that should fire on every push, so schema changes are applied deliberately and before the code depending on them ships.</li>
-    <li><strong>Authorization lives in one place.</strong> Route guards run in server hooks with the rules in a single authz module, so access is decided once rather than re-implemented per page.</li>
-    <li><strong>Secrets are stored as Worker secrets</strong>, not dashboard variables — a plain variable added in the dashboard is dropped by the next deploy, since a deploy uploads a complete set of bindings from config.</li>
-    <li><strong>Form abuse is handled in layers</strong> — Cloudflare Turnstile, a honeypot field and rate limiting together, with authentication events recorded — so genuine enquiries get through while automated spam and brute-force attempts do not.</li>
+    <li><strong>Authorization is decided in one place.</strong> Access rules are applied centrally on the server rather than re-implemented page by page, so protected areas stay protected by default.</li>
+    <li><strong>Secrets stay out of the repository</strong> and live in the platform's dedicated secret storage, kept separate from the configuration that ships with each deploy.</li>
+    <li><strong>Form abuse is handled in layers</strong> — Cloudflare Turnstile backed by additional server-side defences — so genuine enquiries get through while automated spam and brute-force attempts do not.</li>
   </ul>
 </section>
 
@@ -243,9 +242,9 @@
   </p>
   <ul class="role-list">
     <li>Built the public storefront in SvelteKit with Svelte 5 runes and Tailwind CSS v4.</li>
-    <li>Designed the Drizzle schema covering flowers, images, categories, shop details, enquiries, rate limiting and authentication events.</li>
+    <li>Designed the Drizzle schema covering flowers, images, categories, shop details and enquiries.</li>
     <li>Implemented the admin backoffice for catalogue, media, category, shop-detail and enquiry management.</li>
-    <li>Set up authentication with better-auth, including role-based guards, a one-time bootstrap route for the first account, and superadmin-managed accounts thereafter.</li>
+    <li>Set up authentication with better-auth, including role-based access control and admin-managed staff accounts.</li>
     <li>Built image upload and delivery through Cloudflare R2, served via a dedicated route.</li>
     <li>Implemented the SEO layer: per-page metadata, JSON-LD structured data, and a sitemap generated from live availability.</li>
     <li>Added email notifications through Resend so the shop is alerted to each enquiry, with the customer as the reply-to so replies reach them directly.</li>
